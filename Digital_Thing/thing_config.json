@@ -1,0 +1,16 @@
+{
+	"thing_topic": [ {
+		"name":"Thing Template",
+		"id": null,
+		"wifi": {
+			"ssid": null
+		},
+		"publishes": ["thing_id", "wifi/ssid"],
+		"subscribes": ["hardware_topics", "feature_topics", "behavior_topics", "MQTTbrokerIP"],
+		"MQTTbrokerIP": "",
+		"hardware_topics": ["accelerometer", "lightstrip", "microphone"],
+		"feature_topics": ["spirit_level", null],
+		"behavior_topics": "on"
+	}
+	]
+}

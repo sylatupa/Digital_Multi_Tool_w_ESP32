@@ -4,11 +4,26 @@
 # went to arduino website and downloaded 1.8.8 and install.sh'ed.
 # sudo chmod 777 /dev/ttyUSB0
 
-
-
-importjson  
+import Digital_Thing.Digital_Object as do
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
-    main()
+    dc = do.Digital_Config()
+
+
+#while True:
+        # if new program 
+        #   then reset pins
+        #   reset subscribers
+
+
+        
+        #loop on each programs 
+
+        #1) setLocalVariables
+
+        #2) if online and frequency, then publish
+        # set local variables
+
+
+        #3)

@@ -6,9 +6,15 @@
 
 import Digital_Thing.Digital_Object as do
 
+hasMQTT = False
+try:
+    import network.simple_mqtt as mqtt
+    hasMQTT = True
+except:
+    print("MQTT Failed")
 
 if __name__ == "__main__":
-    dc = do.Digital_Config()
+    dc = do.Digital_Config(hasMQTT)
 
 
 #while True:

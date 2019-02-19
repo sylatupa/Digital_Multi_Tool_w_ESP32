@@ -6,10 +6,7 @@
 			"ssid": null
 		},
 		"publishes": ["thing_id", "wifi/ssid"],
-		"subscribes": ["hardware_topics", "feature_topics", "behavior_topics", "MQTTbrokerIP"],
-		"MQTTbrokerIP": "",
-		"hardware_topics": ["accelerometer", "lightstrip", "microphone"],
-		"feature_topics": ["spirit_level", null],
+		"subscribes": ["osc_status","mqtt_status","udp_status","behavior_topics"],
 		"behavior_topics": "on"
 	}
 	]

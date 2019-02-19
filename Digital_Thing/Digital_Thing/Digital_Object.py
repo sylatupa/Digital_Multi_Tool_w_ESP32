@@ -1,6 +1,15 @@
 import json
 
 import os
+
+
+from importlib.machinery import SourceFileLoader
+
+print(os.listdir('.'))
+foo = SourceFileLoader("module.name", "../hardware/neopixel.py").load_module()
+#foo.MyClass()
+
+
 #print(os.listdir('..'))
 class Subscriber:
     def __init__(self, name):

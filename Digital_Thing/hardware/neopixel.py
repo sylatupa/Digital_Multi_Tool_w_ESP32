@@ -1,7 +1,8 @@
 import time
 import machine, neopixel
 
-def demo(count,pin):
+def main(count,pin):
+    n = count
     np = neopixel.NeoPixel(machine.Pin(pin), count)
     # cycle
     for i in range(4 * n):
@@ -37,4 +38,5 @@ def demo(count,pin):
         np[i] = (0, 0, 0)
     np.write()
 
-demo(10,10)
+if __name__=="__main__":
+    main(10,26)

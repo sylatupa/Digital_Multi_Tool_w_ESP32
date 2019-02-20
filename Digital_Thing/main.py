@@ -14,6 +14,7 @@ except:
     print("MQTT Failed")
 
 if __name__ == "__main__":
+    print("starting")
     dc = do.Digital_Config(hasMQTT)
 
 

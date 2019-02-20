@@ -1,0 +1,22 @@
+[
+	{
+	"id" : "buttons",
+	"feature_topics": ["buttons1"]
+},
+{
+	"id": "hall",
+	"feature_topics": [ "magnetic_field"]
+},
+{
+	"id": "accelerometer",
+	"feature_topics": ["spirit_level"]
+},
+{
+	"id": "light_strip",
+	"feature_topics": [ "triggered_visual", "visual_ize"		]
+},
+{
+	"id": "speaker",
+	"feature_topics": ["play_sound"]
+}
+]

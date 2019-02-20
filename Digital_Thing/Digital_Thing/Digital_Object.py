@@ -1,14 +1,165 @@
 import json
-
 import os
+import sys
+import Digital_Thing.getch as getch
+import time
+sys.path.append("./hardware")
+try:
+    import touchpins
+except:
+    print("touchpins not imported")
+'''
+IOT for All?
+I dunno, its a digital thing.
+'''
+
+getch = getch._Getch()
+class Digital_Config:
+    global cf_hw,cf_thng,cf_b,cf_a,cf_ths_thng , c_thng, c_b, c_f, c_ths_thng,filepath
+    filepath = "./" #if running main from 
+    things_that_are_happening = []
+    #Editing these configs changes slower, and maybe never
+    cf_a=  "app_config.json"                                   # feature_config.json is the the config file that interfaces the hardware to the functions
+    cf_b =  "behavior_config.json"                                  # universal variables that guide the systems rate
+    cf_hw = "hardware_config.json"                                  # hardware_config.json is the config file that lists ALL current hardware that can be selected
+    #Change these configs depending on the hardware you have and what pins they are mapped to
+    cf_thng = "thing_config.json"                                   # thing_config.json is the config that lists information specific to the network, mqtt, osc
+    cf_ths_thng = "this_thing.json"                                 # this_thing.json is the config file that lists all the hardware on the board
+
+    maxMenuCurser = 0
+    menu_in_application = False
+    def __init__(self, hasMQTT):
+        #open all the confi files and load them into objects
+        '''
+        a = Digital_Config()
+        a.c_hw                  #all the config_hardware data dictionary
+        a.c_ths_thng            #all the config_this_thing data dictionary
+        '''
+        print("setting up")
+        print("MQTT active:" , hasMQTT)
+        data = open(filepath+cf_ths_thng)  
+        self.this_thing = json.load(data)
+        data = open(filepath+cf_hw)  
+        self.c_hw = json.load(data)
+        data = open(filepath+cf_b)  
+        self.c_b = json.load(data)
+        data = open(filepath+ cf_a)  
+        self.app_config = json.load(data)
+        print("size", len(self.this_thing))
+        
+        self.maxMenuCurser = len(self.this_thing["hardware_topics"])
+        self.menuCurser = 0
+        self.subscription_list =[]
+        self.publishing_list=[]
+        self.hardware_name_list=[]
+        step = "hardware"
+        print("Welcome to the menu,\n this is the available hardware:")
+        print(self.this_thing.get("hardware_topics"))
+        
+        while True:
+            a = getch()
+            time.sleep(.5)
+            if step == 'hardware':
+                if a == 'j':
+                    print('up')
+                    loadModuleRoutes(self.app_config.get(self.self.this_thing["hardware_topics"][self.menuCurser]))
+
+                    thing_that_are_happening.append(import__(hardware["id"]+".py"))
+                    step = "application"
+                if a == 'h':
+                    print('left')
+                    if self.menuCurser > 0:
+                        self.menuCurser = self.menuCurser - 1
+                    else:
+                        print(self.maxMenuCurser)
+                        self.menuCurser = self.maxMenuCurser -1
+                    print(self.this_thing["hardware_topics"][self.menuCurser])
+                if a == 'l':
+                    print('right')
+                    if self.menuCurser < self.maxMenuCurser -1:
+                        self.menuCurser = self.menuCurser + 1
+                    else:
+                        self.menuCurser = 0
+                    print(self.this_thing["hardware_topics"][self.menuCurser])
 
 
-from importlib.machinery import SourceFileLoader
+                if a == 'k':
+                    print('down')
+                    del sys.modules[hardware["id"]+".py"]
+            elif step == 'application':
+                if a == 'j':
+                    print('up')
+                    loadModuleRoutes(self.this_thing["hardware_topics"][self.menuCurser])
+                    thing_that_are_happening.append(import__(hardware["id"]+".py"))
+                    step = "application"
+                if a == 'h':
+                    print('left')
+                    if self.menuCurser > 0:
+                        self.menuCurser = self.menuCurser - 1
+                    else:
+                        print(self.maxMenuCurser)
+                        self.menuCurser = self.maxMenuCurser -1
+                    print(self.this_thing["hardware_topics"][self.menuCurser])
+                if a == 'l':
+                    print('right')
+                    if self.menuCurser < self.maxMenuCurser -1:
+                        self.menuCurser = self.menuCurser + 1
+                    else:
+                        self.menuCurser = 0
+                    print(self.this_thing["hardware_topics"][self.menuCurser])
 
-print(os.listdir('.'))
-foo = SourceFileLoader("module.name", "../hardware/neopixel.py").load_module()
-#foo.MyClass()
 
+                if a == 'k':
+                    print('down')
+                 
+
+def loadModuleRoutes(app_name ):
+    print(app_name)
+    for route in app_config.get(app_name).get("publishes"):
+        print(route)
+    '''
+        if "pin" in pubs.keys():
+                            print(pubs['pin'])
+                            #setPin(pubs["pin"],"Out"),
+                        
+                    for subs in f['subscribes']:
+                        print(subs)
+                        if "pin" in pubs.keys():
+                            print(subs['pin'])
+                            #setPin(subs["pin"],"In"),
+                         #setsubscription on MQTT
+                            print(f)
+
+    publishing_list.append("newlist")
+    '''
+def runThing():
+    while True:
+        m = menu(files)
+        selected = 0
+        while True:
+            try:
+                selected = next(m)
+            except StopIteration:
+                break
+        screen.box(0)
+        game = files[selected]
+        del screen
+        del m
+        del files
+        try:
+            __import__(game)
+        except pew.GameOver:
+            pass
+    del sys.modules[game]
+
+class GameOver(Exception):
+    pass
+
+def setPin(number,direction):
+    if direction == "In":
+        pin = machine.Pin(number, machine.Pin.IN, machine.Pin.PULL_UP)
+    if direction == "Out":
+        pin = machine.Pin(number, machine.Pin.OUT)
 
 #print(os.listdir('..'))
 class Subscriber:
@@ -34,73 +185,6 @@ class Publisher:
     def dispatch(self, event, message):
         for subscriber, callback in self.get_subscribers(event).items():
             callback(message)            
-'''
-
-IOT for All?
-I dunno, its a digital thing.
-
-'''
-class Digital_Config:
-    global cf_hw,cf_thng,cf_b,cf_f,cf_ths_thng, c_hw, c_thng, c_b, c_f, c_ths_thng
-    filepath = "./" #if running main from 
-    things_that_are_happening = []
-    
-    #Editing these configs changes slower, and maybe never
-    cf_f =  "feature_config.json"                                   # feature_config.json is the the config file that interfaces the hardware to the functions
-    cf_b =  "behavior_config.json"                                  # universal variables that guide the systems rate
-    cf_hw = "hardware_config.json"                                  # hardware_config.json is the config file that lists ALL current hardware that can be selected
-    
-    #Change these configs depending on the hardware you have and what pins they are mapped to
-    cf_thng = "thing_config.json"                                   # thing_config.json is the config that lists information specific to the network, mqtt, osc
-    cf_ths_thng = "this_thing.json"                                 # this_thing.json is the config file that lists all the hardware on the board
-
-    def __init__(self, hasMQTT):
-        #open all the confi files and load them into objects
-        '''
-        a = Digital_Config()
-        a.c_hw                  #all the config_hardware data dictionary
-        a.c_ths_thng            #all the config_this_thing data dictionary
-        '''
-        print("setting up")
-        print("MQTT active:" , hasMQTT)
-        data = open(filepath+cf_ths_thng)  
-        self.c_ths_thng = c_ths_thng = json.load(data)
-        data = open(filepath+cf_hw)  
-        self.c_hw = json.load(data)
-        data = open(filepath+cf_b)  
-        self.c_b = json.load(data)
-        data = open(filepath+cf_f)  
-        self.c_f = json.load(data)
-        
-        self.subscription_list =[]
-
-        for thng in self.c_ths_thng["hardware_topics"]:             # get this_thing.json and look at its available hardware topics
-            print("setting up: ",thng)
-            for hardware in self.c_hw:
-                if hardware["id"] == thng:                          # this hardware is listed in this_thing
-                    for feature in hardware["feature_topics"]:     # for all the available features of the hardware that is available
-                        print("adding: ", feature, " to the menu")
-                        for f in self.c_f:                          # look through the feature set and find its match
-                            if str(f['id'])==str(feature) :        # now do all the things that this feature can do
-                                for pubs in f['publishes']:
-                                    if "pin" in pubs.keys():
-                                        print(pubs['pin'])
-                                        #setPin(pubs["pin"],"Out"),
-                                    
-                                for subs in f['subscribes']:
-                                    print(subs)
-                                    if "pin" in pubs.keys():
-                                        print(subs['pin'])
-                                        #setPin(subs["pin"],"In"),
-                                        #setsubscription on MQTT
-                                        print(f)
-
-def setPin(number,direction):
-    if direction == "In":
-        pin = machine.Pin(number, machine.Pin.IN, machine.Pin.PULL_UP)
-    if direction == "Out":
-        pin = machine.Pin(number, machine.Pin.OUT)
-
 
 
 if __name__ == "__main__":
@@ -121,4 +205,18 @@ if __name__ == "__main__":
     pub.dispatch("lunch", "It's lunchtime!") 
     pub.dispatch("dinner", "Dinner is served") 
 
+import sys
+        print(sys.modules.keys())
+        print(list(imports()))
+        
+import types
+def imports():
+    for name, val in globals().items():
+        if isinstance(val, types.ModuleType):
+            try:
+                yield val
+                
+            except:
+                yield ''
 '''
+

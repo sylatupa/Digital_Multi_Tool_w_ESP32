@@ -57,8 +57,10 @@ class Digital_Config:
         print(self.this_thing.get("hardware_topics"))
         
         while True:
+            print("getting getch")
             a = getch()
-            time.sleep(.5)
+
+            print("getting getch")
             if step == 'hardware':
                 if a == 'j':
                     print('up')
@@ -111,8 +113,8 @@ class Digital_Config:
 
                 if a == 'k':
                     print('down')
-                 
-
+                print(a)
+                time.sleep(1)
 def loadModuleRoutes(app_name ):
     print(app_name)
     for route in app_config.get(app_name).get("publishes"):

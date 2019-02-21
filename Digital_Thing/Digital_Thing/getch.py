@@ -34,6 +34,19 @@ class _GetchWindows:
 
     def __call__(self):
         import msvcrt
+
+print("Please press a key to see its value")
+        while 1:
+            print("the key is")
+            if msvcrt.kbhit(): # <--------
+                key = msvcrt.getch()
+                print(key)
+                if ord(key) == 27:
+                    sys.exit()
+            time.sleep(0.1)
+
+
+
         return msvcrt.getch()
 
 

@@ -1,7 +1,7 @@
-import time
-import machine, neopixel
-
 def main(count,pin):
+    import time
+    import machine, neopixel
+
     n = count
     np = neopixel.NeoPixel(machine.Pin(pin), count)
     # cycle

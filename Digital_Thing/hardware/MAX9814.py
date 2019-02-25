@@ -1,17 +1,12 @@
-/* Audio streamer with ESP32 and Adafruit elected microphone board. 
- * Created by Julian Schroeter.
+import machine
 
-https://www.hackster.io/julianfschroeter/esp32-voice-streamer-52bd7e
-*/
-#include <Arduino.h>
-#include <WiFi.h>
-#include <driver/adc.h>
+adc = machine.ADC(7)
 
-#define AUDIO_BUFFER_MAX 800
+adc.read()
 
-uint8_t audioBuffer[AUDIO_BUFFER_MAX];
-uint8_t transmitBuffer[AUDIO_BUFFER_MAX];
-uint32_t bufferPointer = 0;
+#uint8_t audioBuffer[AUDIO_BUFFER_MAX];
+#uint8_t transmitBuffer[AUDIO_BUFFER_MAX];
+#uint32_t bufferPointer = 0;
 
 const char* ssid     = "spyprjct-219";
 const char* password = "789sumrX";
@@ -52,11 +47,6 @@ void setup() {
     Serial.print(".");
   }
 
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("MY IP address: ");
-  Serial.println(WiFi.localIP());
-  
   adc1_config_width(ADC_WIDTH_12Bit); // configure the analogue to digital converter
   adc1_config_channel_atten(ADC1_CHANNEL_0, ADC_ATTEN_0db); // connects the ADC 1 with channel 0 (GPIO 36)
 
@@ -66,13 +56,11 @@ void setup() {
     delay(1000);
   }
 
-  Serial.println("connected to server");
 
   timer = timerBegin(0, 80, true); // 80 Prescaler
   timerAttachInterrupt(timer, &onTimer, true); // binds the handling function to our timer 
   timerAlarmWrite(timer, 125, true);
   timerAlarmEnable(timer);
-
 }
 
 void loop() {
@@ -81,3 +69,30 @@ void loop() {
     client.write((const uint8_t *)audioBuffer, sizeof(audioBuffer)); // sending the buffer to our server
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+from machine import Pin, SPI, ADC
+import time
+
+OUT = 33  # Connect it to OUT on microphone
+
+mic = ADC(Pin(OUT))
+mic.atten(ADC.ATTN_11DB)
+
+def read_mic():
+    return min(max(int(round(mic.read()/15.0)) - 44, 0), 127)
+
+while True:
+    val = read_mic()
+    print(val)
+    time.sleep(0.1)

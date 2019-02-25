@@ -1,11 +1,29 @@
 {
-	"touchpins":{
-		"id": "touchpins",
+	"this_thing":
+	{
+		"wifi": {
+			"ssid": null
+		},
 		"publishes": [
-		  {"id":"up","pin":12},
-		  {"id":"left","pin":13},
-		  {"id":"right","pin":14},
-		  {"id":"down","pin":15}
+			{"id":"thing_id"},
+			{"id":"wifi/ssid"}
+		],
+		"subscribes": [
+			{"id":"osc_status"},
+			{"id":"mqtt_status"},
+			{"id":"udp_status"},
+			{"id":"behavior_topics"}
+		],
+		"behavior_topics": "on"
+	}
+	,
+	"touchpins":{
+		"applications":["touchpins"],
+		"publishes": [
+			{"id":"up","pin":12},
+			{"id":"left","pin":13},
+			{"id":"right","pin":14},
+			{"id":"down","pin":15}
 		],
 		"subscribes":[
 			{"id":"up","variable":"up"},
@@ -15,8 +33,27 @@
 		]
 
 	},
+"keyboard":{
+		"applications":["keyboard4"],
+		"publishes": [
+			{"id":"up"},
+			{"id":"left"},
+			{"id":"right"},
+			{"id":"down"}
+		],
+		"subscribes":[
+			{"id":"up"},
+			{"id":"left"},
+			{"id":"right"},
+			{"id":"down"}
+		]
+
+	},
+
+
+
 	"magntic_field":{
-		"id": "magnetic_field",
+		"applications":["magnetic_field"],
 		"publishes": [
 			{"id":"x","pin":21},
 			{"id":"trigger"},
@@ -26,9 +63,9 @@
 			{"id":"sample_rate"}
 		]
 	} ,
-	
-	"spirit_level":{
-		"id": "spirit_level",
+
+	"accelerometer":{
+		"applications":["spirit_level"],
 		"publishes": [
 			{"id":"x","pin":31},
 			{"id":"y","pin":32},
@@ -40,8 +77,8 @@
 			{"id":"trigger_threshold"}
 		]
 	},
-	"triggered_visual":{
-		"id": "triggered_visual",
+	"neopixels120":{
+		"applications":["menupixel","triggered_visual"],
 		"subscribes": [
 			{"id":"trigger_threshold"},
 			{"id":"sample_rate"},
@@ -49,16 +86,28 @@
 			{"id":"length","value":10}
 		]
 	},
-	"visual_ize":{
-		"id": "visual_ize",
+	"neopixels144":{
+		"applications":["menupixel","visual_ize"],
 		"subscribes": [
-			{"id":"x","pin":"26","variable":"x"},
+			{"id":"x","pin":26,"variable":"x"},
 			{"id":"y","variable":"length","default":10},
 			{"id":"sample_rate","variable":"sample_rate","default":40}
 		]
 	},
+	"neopixels7":{
+		"applications":["menupixel","visual_ize"],
+		"subscribes": [
+			{"id":"x","pin":26,"variable":"x"},
+			{"id":"y","variable":"length","default":10},
+			{"id":"sample_rate","variable":"sample_rate","default":40},
+			{"id":"length","value":7}
+		]
+	},
+
+
+
+
 	"play_sound":{
-		"id": "play_sound",
 		"subscribes": [
 			{"id":"trigger_threshold"},
 			{"id":"sample_rate"},
@@ -66,7 +115,6 @@
 		]
 	},
 	"spy_bug":{
-		"id": "spy_bug",
 		"publishes": [
 			{"id":"sound","pin":31},
 			{"id":"trigger"}

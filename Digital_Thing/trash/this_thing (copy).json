@@ -1,0 +1,9 @@
+{
+"board_name":"ttgo_with_sd",
+"onboard_led":2,
+"hardware_topics": [
+	"accelerometer"
+]
+
+
+}

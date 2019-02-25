@@ -1,0 +1,62 @@
+import hardware.keyboard as getch #external library that grabs a character from keyobard
+'''
+menu from keyboard
+'''
+getch = getch._Getch()
+maxMenuCurser = 0
+menu_in_application = False
+menuHardwareCurser = 0
+menuApplicationCurser = 0
+maxMenuHardwareCurser = 0
+maxMenuApplicationCurser = 0
+global menu_level
+menu_level = "hardiware"
+print("Welcome to the menu,\n this is the available hardware:")
+print("k: UP-CHOOSE |   j: DOWN-UNLOAD   |   h: LEFT-SELECT    |    l: RIGHT-SELECT")
+print("a: EXIT")
+
+def checkKeyboard():
+    global menu_level
+    a = getch()
+    if menu_level == 'hardware':
+        print(menuHardwareCurser)
+        #print("getting getch")
+        if a == 'k':
+            print('up')
+            step = "application"
+        if a == 'h':
+            print('left')
+            if menuHardwareCurser > 0:
+                menuHardwareCurser = menuHardwareCurser - 1
+
+            else:
+                menuHardwareCurser = maxMenuHardwareCurser - 1
+        if a == 'l':
+            print('right')
+            if menuHardwareCurser < maxMenuHardwareCurser - 1:
+                menuHardwareCurser = menuHardwareCurser + 1
+            else:
+                menuHardwareCurser = 0
+        if a == 'j':
+            print('down')
+    elif step == 'application':
+        if a == 'k':
+            print('up')
+            step = ""
+        if a == 'h':
+            print('left')
+            if self.menuApplicationCurser > 0:
+                self.menuApplicationCurser = self.menuApplicationCurser - 1
+            else:
+                print(self.maxMenuCurser)
+                self.menuApplicationCurser = self.maxMenuCurser -1
+        if a == 'l':
+            print('right')
+            if self.menuApplicationCurser < self.maxMenuCurser -1:
+                self.menuApplicationCurser = self.menuApplicationCurser + 1
+            else:
+                self.menuApplicationCurser = 0
+        if a == 'k':
+            print('down')
+    if a == 'a':
+        sys.exit()

@@ -2,6 +2,7 @@ import hardware.keyboard as getch #external library that grabs a character from 
 '''
 menu from keyboard
 '''
+global menu_level,up,down,left,right
 getch = getch._Getch()
 maxMenuCurser = 0
 menu_in_application = False
@@ -13,24 +14,23 @@ up = False
 down = False
 left = False
 right = False
-global menu_level
 menu_level = "hardware"
 print("Welcome to the menu,\n this is the available hardware:")
 print("k: UP-CHOOSE |   j: DOWN-UNLOAD   |   h: LEFT-SELECT    |    l: RIGHT-SELECT")
 print("a: EXIT")
 
+global hardware,application
+hardware = True
+application = False
 def checkKeyboard():
-    up = False
-    down = False
-    left = False
-    right = False
-    global menu_level , menuHardwareCurser
+    global menu_level , menuHardwareCurser,up,down,left,right,hardware,application
     a = getch()
-    print(menu_level)
-    if menu_level == 'hardware':
+
+    if hardware:
         if a == 'k':
             print('up')
-            menu_level = "application"
+            application = True
+            hardware = False
             up = True
         if a == 'h':
             print('left')
@@ -50,10 +50,12 @@ def checkKeyboard():
             down = True
             print('down')
 
-    elif menu_level == 'application':
+    if application:
         if a == 'k':
             print('up')
-            menu_level = ""
+            print('down')
+            application = False
+            hardware = True
         if a == 'h':
             print('left')
             if self.menuApplicationCurser > 0:
@@ -68,6 +70,7 @@ def checkKeyboard():
             else:
                 self.menuApplicationCurser = 0
         if a == 'k':
-            print('down')
+            pass
+
     if a == 'a':
         sys.exit()

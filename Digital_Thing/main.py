@@ -6,6 +6,11 @@
 import sys
 import os
 sys.path.append("./Digital_Thing")
+try:
+    sys.dont_write_bytecode = True #hoping to avoid .pyc files
+except:
+    print('probably on ubuntu machine')
+    pass
 #print(sys.modules)
 import Digital_Thing.Digital_Object as dt
 import Digital_Thing.Digital_Object_Functions as functions
@@ -20,37 +25,66 @@ try:
     import network.simple_mqtt as mqtt
 except:
     print("esp32")
-
-print("starting")
-published_routes = []
+try:
+    import machine  
+    led = machine.Pin(16, machine.Pin.OUT)
+    for i in range(10):
+        print("led")
+        led(1)
+        time.sleep(0.5)
+        led(0)
+        time.sleep(0.5)
+except:
+    print("led fail")
+try:
+    import hardware.neopixel as px
+    px.main(20,25)
+except:
+    print("neopixel failure")
+    pass
 subscribed_routes = []
 menu.maxMenuHardwareCurser = len(dt.this_thing["hardware"])
 menu.maxMenuApplicationCurser = 0
-# Using the list of Digital Objects
-# and the Digital Object Helper Functions
-# with the menu to browse
+publisher_list = []
 def runThing():
     while True:
-        print(menu.menuHardwareCurser , " " , menu.menuApplicationCurser)
-        #pub.register(str(route["id"]),this_subscriber)
         menu.checkKeyboard()
-        if menu.up: 
-            
-            _import__(do.getApplication(menu.menuApplicationCurser))
-            events = ['up']
-            ipub  = pub_sub_local.Publisher()
-            pub.add_events(events)
-            pub.register("up",tp)
+        if menu.up:
+            events_published = dt.getPublishersForApp(hardware_name )
+            subscribers = dt.getSubscribersForApp(hardware_name)
+            pub.add_events(events_published)
+            publisher_list.append(pub)
+            if menu.application:
+                pub = pub_sub_local.Publisher()
+                #app_name = dt.getApplication(hardware_name, menu.menuApplicationCurser)
+                __import__(application_name)
+                for sub in subscribers:
+                    for pubs in publisher_list():
+                        for event in pubs.events:
+                            if event == sub.get("id"):
+                                pub.register(sub, getattr(new_app, sub)() )     
+
+            menu.up = False
 
         if menu.down:
+            menu.down = False 
+            pass
             #'del sys.modules[game]'
 
         if menu.left:
-
+            hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]
+            application_name = dt.app_config[hardware_name].get("applications")[menu.menuApplicationCurser]
+            print(hardware_name +" " + application_name)
+            menu.left = False
+            pass
         if menu.right:
+            hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]
+            application_name = dt.app_config[hardware_name].get("applications")[menu.menuApplicationCurser]
+            print(hardware_name +" " + application_name)
+            menu.right = False
+            pass
 
-
-        pub.dispatch("up","stuff2")
+        #pub.dispatch("up","stuff2")
         time.sleep(.5)
         '''
         do.subscription_list

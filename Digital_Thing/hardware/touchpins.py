@@ -1,5 +1,3 @@
-def evoke(message):
-    print("evokiinng" + message)
 
 def configure():
     from time import sleep

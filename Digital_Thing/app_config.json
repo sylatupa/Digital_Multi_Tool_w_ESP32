@@ -24,14 +24,7 @@
 			{"id":"left","pin":13},
 			{"id":"right","pin":14},
 			{"id":"down","pin":15}
-		],
-		"subscribes":[
-			{"id":"up","variable":"up"},
-			{"id":"left","variable":"left"},
-			{"id":"right","variable":"right"},
-			{"id":"down","variable":"down"}
 		]
-
 	},
 "keyboard":{
 		"applications":["keyboard4"],
@@ -40,15 +33,22 @@
 			{"id":"left"},
 			{"id":"right"},
 			{"id":"down"}
-		],
-		"subscribes":[
-			{"id":"up"},
-			{"id":"left"},
-			{"id":"right"},
-			{"id":"down"}
 		]
-
 	},
+	"onboard_temp":{
+		"applications":["temperature","trigger_above","trigger_below"],
+		"publishes": [
+			{"id":"x"},
+			{"id":"trigger"}
+		],
+		"subscribes": [
+			{"id":"sample_rate"},
+			{"id":"trigger"},
+			{"id":"threshold_above"},
+			{"id":"threshold_below"}
+		]
+	} ,
+
 
 
 

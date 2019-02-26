@@ -1,6 +1,4 @@
 import json
-#import os
-#import sys
 
 _filepath = "./" #if running main from 
 cf_a=  "app_config.json"                                   # feature_config.json is the the config file that interfaces the hardware to the functions
@@ -30,23 +28,28 @@ def pruneAppConfig():
             except:
                 print("no hardware named " + hardware + " in config file")
 
-def getPublishers():
-    for apps in app_config:
-        try:
-            for pubs in app_config.get("publishes"):
-                print(pubs)
-                publishers.add(pubs.get["id"])
-        except:
-            pass
+def getPublishersForApp(appname):
+    app = app_config.get(appname)
+    publist = set()
+    for pubs in app.get("publishes"):
+        publist.add(pubs.get("id"))
+    return publist
 
-def getApplication(ele_num):
-    return hardware.get("applications")[ele_num]
+
+def getSubscribersForApp(appname):
+    app = app_config.get(appname)
+    sublist = set()
+    for subs in app.get("subscribes"):
+        sublist.add(subs.get("id"))
+    return sublist
+
+
+
+#def getApplication(ele_num):
+#    return hardware.get("applications")[ele_num]
 
 subscription_list =[]
 publishing_list=[]
 hardware_name_list=[]
 
 pruneAppConfig()  #removes all the config files that arent on this thing, modify the hardware list in this_thing.json 
-getPublishers()
-print("pubbbbs")
-print(publishers)

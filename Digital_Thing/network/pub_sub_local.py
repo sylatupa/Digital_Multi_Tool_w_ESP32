@@ -35,7 +35,7 @@ def getPublishers_iter():
     pass
 
 
-def getSubscribers_iter()
+def getSubscribers_iter():
     yield ''
     pass
 

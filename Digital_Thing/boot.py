@@ -4,15 +4,15 @@
 #import webrepl
 #webrepl.start()
 
-import Digital_Thing.Digital_Object as do
-do.Digital_Config(False)
 
-import machine
-
-led = machine.Pin(16, machine.Pin.OUT)
-for i in range(10):
-    print("led")
-    led(1)
-    time.sleep(0.5)
-    led.(0)
-    time.sleep(0.5)
+#import pyb
+#pyb.main('main.py') # main script to run after this one
+#pyb.usb_mode('CDC+MSC') # act as a serial and a storage device
+#pyb.usb_mode('CDC+HID') # act as a serial device and a mouse
+#led = machine.Pin(16, machine.Pin.OUT)
+#for i in range(10):
+#    print("led")
+#    led(1)
+#    time.sleep(0.5)
+#    led.(0)
+#    time.sleep(0.5)

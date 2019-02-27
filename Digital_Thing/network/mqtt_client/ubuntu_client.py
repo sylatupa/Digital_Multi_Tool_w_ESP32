@@ -20,23 +20,23 @@ class mqtt_client():
     '''
     global client
     def connect_client(self):
-            global client
+        global client
             client = mqtt.Client("spyPi")
             client.connect(broker_address, 1883)
             #client.on_message=on_message
             client.loop_start()
 
     def publish_data(self,date):
-            client.publish(data["topic"],str(data["m"]) )  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
+        client.publish(data["topic"],str(data["m"]) )  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
 
     def publish_data2(self, topic, data):
-            client.publish(topic, data)  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
+        client.publish(topic, data)  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
 
 
 
     def test_publish(self):
-            while True:
-                    print("Top")
+        while True:
+            print("Top")
 
                     client.publish("up","1.0")
                     time.sleep(1)

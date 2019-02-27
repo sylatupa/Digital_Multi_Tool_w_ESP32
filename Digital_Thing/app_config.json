@@ -48,10 +48,6 @@
 			{"id":"threshold_below"}
 		]
 	} ,
-
-
-
-
 	"magntic_field":{
 		"applications":["magnetic_field"],
 		"publishes": [

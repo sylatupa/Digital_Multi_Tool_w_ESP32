@@ -1,0 +1,13 @@
+speed
+acceleration rate of change of velocity
+curvature  and cross product
+jerkyness
+
+velocity
+x(t) = x(t-1)
+
+speed is a magnitutde of velocity
+
+canceling like this can introduce noise.
+
+smoothing as parameter

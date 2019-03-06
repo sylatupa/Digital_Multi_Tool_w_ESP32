@@ -5,7 +5,8 @@
 # sudo chmod 777 /dev/ttyUSB0
 import sys
 import os
-sys.path.append("./Digital_Thing")
+print(os.listdir("."))
+#sys.path.append("./Digital_Thing")
 try:
     sys.dont_write_bytecode = True #hoping to avoid .pyc files
 except:
@@ -49,41 +50,41 @@ publisher_list = []
 def runThing():
     while True:
         menu.checkKeyboard()
-        if menu.up:
-            events_published = dt.getPublishersForApp(hardware_name )
-            subscribers = dt.getSubscribersForApp(hardware_name)
+        if menu.hardware and menu.up:
+            print("checkinghardware")
+            menu.hardware = False
+            menu.up = False
+        if menu.application and menu.up:
+            menu.application = False
+            print("checkingapps")
+            pub             = pub_sub_local.Publisher()
+            events_published    = dt.getPublishersForApp(hardware_name )
+            subscribers         = dt.getSubscribersForApp(hardware_name)
             pub.add_events(events_published)
             publisher_list.append(pub)
-            if menu.application:
-                pub = pub_sub_local.Publisher()
-                #app_name = dt.getApplication(hardware_name, menu.menuApplicationCurser)
-                __import__(application_name)
-                for sub in subscribers:
-                    for pubs in publisher_list():
-                        for event in pubs.events:
-                            if event == sub.get("id"):
-                                pub.register(sub, getattr(new_app, sub)() )     
-
+            #app_name = dt.getApplication(hardware_name, menu.menuApplicationCurser)
+            __import__(application_name)
+            for sub in subscribers:
+                for pubs in publisher_list():
+                    for event in pubs.events:
+                        if event == sub.get("id"):
+                            pub.register(sub, getattr(new_app, sub)() )     
             menu.up = False
 
         if menu.down:
             menu.down = False 
-            pass
-            #'del sys.modules[game]'
+            #del sys.modules[game]
 
         if menu.left:
             hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]
             application_name = dt.app_config[hardware_name].get("applications")[menu.menuApplicationCurser]
             print(hardware_name +" " + application_name)
             menu.left = False
-            pass
         if menu.right:
             hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]
             application_name = dt.app_config[hardware_name].get("applications")[menu.menuApplicationCurser]
             print(hardware_name +" " + application_name)
             menu.right = False
-            pass
-
         #pub.dispatch("up","stuff2")
         time.sleep(.5)
         '''
@@ -105,4 +106,12 @@ def runThing():
         #RUN MODULES
         #things_that_are_happening.append(thisApplication)
 
+
+if __name__=="__main__":
+    import subprocess as sp
+    #sp.call('cls',shell=True)
+    tmp = sp.call('clear',shell=True)
+    
+
 runThing()
+

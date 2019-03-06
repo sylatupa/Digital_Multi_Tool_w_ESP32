@@ -78,7 +78,7 @@ def runThing():
         if menu.left:
             hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]
             application_name = dt.app_config[hardware_name].get("applications")[menu.menuApplicationCurser]
-            print(hardware_name +" " + application_name)
+            print(hardware_name  " + application_name)
             menu.left = False
         if menu.right:
             hardware_name = dt.this_thing["hardware"][menu.menuHardwareCurser]

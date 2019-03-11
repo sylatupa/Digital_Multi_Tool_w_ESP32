@@ -1,123 +1,120 @@
 {
-	"this_thing":
-	{
-		"wifi": {
-			"ssid": null
-		},
-		"publishes": [
-			{"id":"thing_id"},
-			{"id":"wifi/ssid"}
-		],
-		"subscribes": [
-			{"id":"osc_status"},
-			{"id":"mqtt_status"},
-			{"id":"udp_status"},
-			{"id":"behavior_topics"}
-		],
-		"behavior_topics": "on"
-	}
-	,
-	"touchpins":{
-		"applications":["touchpins"],
-		"publishes": [
-			{"id":"up","pin":12},
-			{"id":"left","pin":13},
-			{"id":"right","pin":14},
-			{"id":"down","pin":15}
-		]
-	},
-"keyboard":{
-		"applications":["keyboard4"],
-		"publishes": [
-			{"id":"up"},
-			{"id":"left"},
-			{"id":"right"},
-			{"id":"down"}
-		]
-	},
-	"onboard_temp":{
-		"applications":["temperature","trigger_above","trigger_below"],
-		"publishes": [
-			{"id":"x"},
-			{"id":"trigger"}
-		],
-		"subscribes": [
-			{"id":"sample_rate"},
-			{"id":"trigger"},
-			{"id":"threshold_above"},
-			{"id":"threshold_below"}
-		]
-	} ,
-	"magntic_field":{
-		"applications":["magnetic_field"],
-		"publishes": [
-			{"id":"x","pin":21},
-			{"id":"trigger"},
-			{"id":"active"}
-		],
-		"subscribes": [
-			{"id":"sample_rate"}
-		]
-	} ,
+  "this_thing":
+  {
+    "wifi": {
+      "ssid": null
+    },
+    "publishes": [
+      {"id":"thing_id"},
+      {"id":"wifi/ssid"}
+    ],
+    "subscribes": [
+      {"id":"osc_status"},
+      {"id":"mqtt_status"},
+      {"id":"udp_status"},
+      {"id":"behavior_topics"}
+    ],
+    "behavior_topics": "on"
+  }
+  ,
+  "touchpins":{
+    "applications":["touchpins","notes","cutoff","resonance"],
+    "publishes": [
+      {"id":"up","pin":12},
+      {"id":"left","pin":13},
+      {"id":"right","pin":14},
+      {"id":"down","pin":15}
+    ]
+  },
+  "keyboard":{
+    "applications":["keyboard4"],
+    "publishes": [
+      {"id":"up"},
+      {"id":"left"},
+      {"id":"right"},
+      {"id":"down"}
+    ]
+  },
+  "onboard_temp":{
+    "applications":["temperature","trigger_above","trigger_below"],
+    "publishes": [
+      {"id":"x"},
+      {"id":"trigger"}
+    ],
+    "subscribes": [
+      {"id":"sample_rate"},
+      {"id":"trigger"},
+      {"id":"threshold_above"},
+      {"id":"threshold_below"}
+    ]
+  } ,
+  "magntic_field":{
+    "applications":["magnetic_field"],
+    "publishes": [
+      {"id":"x","pin":21},
+      {"id":"trigger"},
+      {"id":"active"}
+    ],
+    "subscribes": [
+      {"id":"sample_rate"}
+    ]
+  } ,
 
-	"accelerometer":{
-		"applications":["spirit_level"],
-		"publishes": [
-			{"id":"x","pin":31},
-			{"id":"y","pin":32},
-			{"id":"z","pin":33},
-			{"id":"trigger"}
-		],
-		"subscribes": [
-			{"id":"sample_rate"},
-			{"id":"trigger_threshold"}
-		]
-	},
-	"neopixels120":{
-		"applications":["menupixel","triggered_visual"],
-		"subscribes": [
-			{"id":"trigger_threshold"},
-			{"id":"sample_rate"},
-			{"id":"x","pin":26},
-			{"id":"length","value":10}
-		]
-	},
-	"neopixels144":{
-		"applications":["menupixel","visual_ize"],
-		"subscribes": [
-			{"id":"x","pin":26,"variable":"x"},
-			{"id":"y","variable":"length","default":10},
-			{"id":"sample_rate","variable":"sample_rate","default":40}
-		]
-	},
-	"neopixels7":{
-		"applications":["menupixel","visual_ize"],
-		"subscribes": [
-			{"id":"x","pin":26,"variable":"x"},
-			{"id":"y","variable":"length","default":10},
-			{"id":"sample_rate","variable":"sample_rate","default":40},
-			{"id":"length","value":7}
-		]
-	},
-
-
-
-
-	"play_sound":{
-		"subscribes": [
-			{"id":"trigger_threshold"},
-			{"id":"sample_rate"},
-			{"id":"light","pin":22}
-		]
-	},
-	"spy_bug":{
-		"publishes": [
-			{"id":"sound","pin":31},
-			{"id":"trigger"}
-		],
-		"subscribes": [
-			{"id":"sample_rate"},
-			{"id":"trigger_threshold"}
-		]
-	}
+  "accelerometer":{
+    "applications":["spirit_level","notes","cutoff","resonance"],
+    "publishes": [
+      {"id":"x","pin":31},
+      {"id":"y","pin":32},
+      {"id":"z","pin":33},
+      {"id":"trigger"}
+    ],
+    "subscribes": [
+      {"id":"sample_rate"},
+      {"id":"trigger_threshold"}
+    ]
+  },
+  "neopixel":{
+    "applications":["menupixel","triggered_visual","cycle","bounce","fadeInOut"],
+    "subscribes": [
+      {"id":"trigger_threshold"},
+      {"id":"sample_rate"},
+      {"id":"x","pin":26},
+      {"id":"length","value":10},
+      {"id":"trigger_app","value":10}
+    ]
+  },
+  "neopixels144":{
+    "applications":["menupixel","visual_ize"],
+    "subscribes": [
+      {"id":"x","pin":26,"variable":"x"},
+      {"id":"y","variable":"length","default":10},
+      {"id":"sample_rate","variable":"sample_rate","default":40}
+    ]
+  },
+  "neopixels7":{
+    "applications":["menupixel","visual_ize"],
+    "subscribes": [
+      {"id":"x","pin":26,"variable":"x"},
+      {"id":"y","variable":"length","default":10},
+      {"id":"sample_rate","variable":"sample_rate","default":40},
+      {"id":"length","value":7}
+    ]
+  },
+  "play_sound":{
+    "subscribes": [
+      {"id":"trigger_threshold"},
+      {"id":"sample_rate"},
+      {"id":"light","pin":22}
+    ]
+  },
+  "spy_bug":{
+    "publishes": [
+      {"id":"sound","pin":31},
+      {"id":"trigger"}
+    ],
+    "subscribes": [
+      {"id":"sample_rate"},
+      {"id":"trigger_threshold"}
+    ]
+  }
 }

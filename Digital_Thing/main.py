@@ -1,29 +1,34 @@
-   
+
+
+def sub_cb(topic, msg):
+    print((topic, msg))
 
 if __name__=='__main__':
-    #sp.call('cls',shell=True)
+    #import subprocess as sp
     #tmp = sp.call('clear',shell=True)
     import sys
     import os
     print(os.listdir("."))
-    sys.path.append("./Digital_Thing")
+    sys.path.append("./Digital_Thing") #needed to import modules in same path
     try:
         sys.dont_write_bytecode = True #hoping to avoid .pyc files
+        import network.mqtt_client.ubuntu_client
     except:
         print('probably on ubuntu machine')
         pass
     import Digital_Thing.Digital_Object as dt
     import Digital_Thing.Menu as mn 
-    import network.mqtt_client.ubuntu_client
     import Digital_Thing.pub_sub_local as pub_sub_local
     import time
-    import hardware.touchpins as tp
+
+
     try:
         import touchpins
-        import network.simple_mqtt as mqtt
     except:
         print("esp32")
     try:
+        #import hardware.touchpins as tp
+        from machine import Timer
         import machine  
         led = machine.Pin(16, machine.Pin.OUT)
         for i in range(10):
@@ -32,6 +37,7 @@ if __name__=='__main__':
             time.sleep(0.5)
             led(0)
             time.sleep(0.5)
+        print("micro-python and imports")
     except:
         print("led fail")
     try:
@@ -44,8 +50,10 @@ if __name__=='__main__':
     menu_event = dtm.menu_event #getting the function for performance
     while True:
         menu_event() 
-        #print(dtm.device.state.index)
-        #print(dtm.device.state.maxIndex)
+
+
+
+
 '''
         pub                  = pub_sub_local.Publisher()
         events_published    = dt.getPublishersForApp(hardware_name )

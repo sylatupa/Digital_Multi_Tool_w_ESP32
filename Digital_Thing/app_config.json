@@ -48,7 +48,7 @@
       {"id":"threshold_below"}
     ]
   } ,
-  "magntic_field":{
+  "magnetic_field":{
     "applications":["magnetic_field"],
     "publishes": [
       {"id":"x","pin":21},
@@ -73,7 +73,7 @@
       {"id":"trigger_threshold"}
     ]
   },
-  "neopixel":{
+  "neopixels":{
     "applications":["menupixel","triggered_visual","cycle","bounce","fadeInOut"],
     "subscribes": [
       {"id":"trigger_threshold"},

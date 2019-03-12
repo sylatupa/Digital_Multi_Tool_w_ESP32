@@ -2,7 +2,7 @@
 "board_name":"ttgo_with_sd",
 "onboard_led":2,
 "hardware": [
-	"accelerometer","touchpins","neopixels7","neopixels144","magntic_field"
+	"accelerometer","touchpins","neopixels","magnetic_field"
 ]
 }
 

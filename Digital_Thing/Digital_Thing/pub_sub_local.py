@@ -2,17 +2,10 @@
 '''makes a subscriber, this appName must have the functions it wil register with'''    
 def setSubRegisterFirstClassObject(hw,appName,app_config):
     import os
-    #app = __import__(("hardware."+str(appName)), fromlist=[appName])
     app = __import__(("hardware"), fromlist=[appName])
-    print(dir(pub))
-    app = app.spirit_level
-    print(dir(app))
-    #__import__("hardware."+appName, globals={}, locals={}, fromlist=[], level=-1) 
+    app = getattr(app,appName)
     for subs in app_config.get(hw).get("subscribes"):
         print(subs)
-        #method_to_call = getattr(app, subs.get("id"))
-        #result = method_to_call("valuee")
-        #setPubRegister(subs.get("id"),method_to_call)
         setPubRegister(subs.get("id"),app)
 
 
@@ -60,6 +53,13 @@ class Subscriber:
     def __hash__(self):
         return hash(self.name)
 
+def prnt_funcs(module):
+        print("All Functions _______________________________")
+        for val in dir(module): 
+            if '__' not in val:
+                print(val)
+
+
 class Publisher:
     def __init__(self):
         self.events = []
@@ -80,24 +80,25 @@ class Publisher:
     def get_subscribers(self, event):
         return self.events[event]
     def register(self, event, who, callback=None):
-        print("registr:",event,who,callback)
+        print("registering: {}".format(event))
+        prnt_funcs(who)
         #method_to_call = getattr(app, subs.get("id"))
         #result = method_to_call("valuee")
         #setPubRegister(subs.get("id"),method_to_call)
-        print(who, ' ' , event)
         if callback == None:
             callback = getattr(who, event)
         self.get_subscribers(event)[who] = callback
     def unregister(self, event, who):
         del self.get_subscribers(event)[who]
     def dispatch(self, event, message):
-        print( event, message)
-        print(self.events)
-        print(self.get_subscribers(event))
+        print('getting event : {} from event dictionary:'.format(event))
+        for key,val in self.events.items(): print("{} = {}".format(key, type(val)))
+        
+        print('sending message: {}'.format(message))
         for subscriber, callback in self.get_subscribers(event).items():
-            print(subscriber)
+            print("subscribers:{}, {} ".format(type(subscriber),type(callback)))
             callback(message)            
-
+'''
 {'dinner': {<pub_sub_local.Subscriber object at 0x7fbad13aa860>: <bound method Subscriber.dinner of <pub_sub_local.Subscriber object at 0x7fbad13aa860>>, <pub_sub_local.Subscriber object at 0x7fbad13aa898>: <bound method Subscriber.dinner of <pub_sub_local.Subscriber object at 0x7fbad13aa898>>},
 'lunch': {<pub_sub_local.Subscriber object at 0x7fbad13aa828>: <bound method Subscriber.lunch of <pub_sub_local.Subscriber object at 0x7fbad13aa828>>, <pub_sub_local.Subscriber object at 0x7fbad13aa898>: <bound method Subscriber.lunch of <pub_sub_local.Subscriber object at 0x7fbad13aa898>>},
 'breakfast': {},
@@ -107,7 +108,7 @@ class Publisher:
 'trigger': {},
 'sample_rate': {<module 'hardware.spirit_level' from '/home/spy/Digital_Multi_Tool_w_ESP32/Digital_Thing/hardware/spirit_level.py'>: <function sample_rate at 0x7fbabd10c6a8>}, 
 'trigger_threshold': {<module 'hardware.spirit_level' from '/home/spy/Digital_Multi_Tool_w_ESP32/Digital_Thing/hardware/spirit_level.py'>: <function trigger_threshold at 0x7fbabd10c730>}}
-
+'''
 
 subscribed_routes = []
 published_routes= []

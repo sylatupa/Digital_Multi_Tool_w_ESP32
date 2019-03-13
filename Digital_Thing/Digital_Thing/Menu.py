@@ -6,30 +6,26 @@ class Menu(object):
     On each call get the last keyboard press, and process that character through the state machine.
     """
     def __init__(self,dt):
-        #self.device = SimpleDevice()
         self.getch = getch._Getch()  #TODO:esp32 convert
-        print(  "***************************************Welcome to the menu****************************************\n***************************************************************************************************")
+        print(  "************Welcome to the menu****************************************\n******************************************")
         print("k: UP-CHOOSE |   j: DOWN-UNLOAD   |   h: LEFT-SELECT    |    l: RIGHT-SELECT   |   a: QUIT")
-        self.menuDict = {"k":"up","j":"down","h":"left","l":"right","a":"quit"}
-        self.indexHW = 0
-        self.indexApp = 0
-        self.dt = dt
-        self.currentHWName = self.dt.this_thing.get("hardware")[0]
+        self.menuDict =     {"k":"up","j":"down","h":"left","l":"right","a":"quit"}
+        self.indexHW        =0
+        self.indexApp       = 0
+        self.dt             = dt
+        self.currentHWName  = self.dt.this_thing.get("hardware")[0]
         self.currentAppName = self.dt.app_config.get(self.currentHWName).get('applications')[0]
-        print("curApp:"+self.currentAppName)
-        #print(self.currentHWName, "  " ,self.device.state)
-        self.maxHWIndex = len(self.dt.app_config.get(self.currentHWName))
-        self.maxAppIndex =  len(self.dt.app_config.get(self.currentHWName).get('applications'))
-        self.state = "hardware"
+        self.maxHWIndex     = len(self.dt.app_config.get(self.currentHWName))
+        self.maxAppIndex    =  len(self.dt.app_config.get(self.currentHWName).get('applications'))
+        self.state          = "HW"
     def menu_event(self):
         self.a = self.getch()
-
         # self.a = "  #TODO:esp32 convert
         # self.dirctn = "" #TODO: esp32 convert 
         self.dirctn = self.menuDict.get(self.a)
+        self.prnt()
 
-        #maybe a conditional event hereeeeeeeeeeeeee
-        #self.device.on_event(self.dirctn)
+
         if self.dirctn == 'None':
             print('check')
             pass
@@ -37,32 +33,25 @@ class Menu(object):
             sys.exit()
 
         '''HARDWARE STATE'''
-        if self.state == 'hardware':
+        if self.state == 'HW':
             if self.dirctn == 'left':
-                self.indexHW = levelUp(self.indexHW, self.maxHWIndex)
                 self.indexApp = 0
+                self.indexHW = levelUp(self.indexHW, self.maxHWIndex)
                 self.currentHWName = self.dt.this_thing.get("hardware")[self.indexHW]
+                self.updateMaxIndex()
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
-                self.prnt()
             elif self.dirctn == 'right':
+                self.indexApp = 0
                 self.indexHW = levelDown(self.indexHW, self.maxHWIndex)
                 self.currentHWName = self.dt.this_thing.get("hardware")[self.indexHW]
-                self.indexApp = 0
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
             elif self.dirctn == 'up':
-
-                #TEST RUN
-                pubsub.setPubEvents(self.currentHWName,self.dt.app_config)
-                print("curApp:"+self.currentAppName)
-                pubsub.setSubRegisterFirstClassObject(self.currentHWName,self.currentAppName,self.dt.app_config)
-                pubsub.pub.dispatch("sample_rate",122)
-
                 self.state = "apps"
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
-                self.updateMaxIndex()
             elif self.dirctn == 'down':
-                print("down")
+                print("lowest")
         elif self.state == 'apps':
+            '''apps state'''
             if self.dirctn == 'left':
                 self.indexApp = levelUp(self.indexApp, self.maxAppIndex)
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
@@ -71,13 +60,23 @@ class Menu(object):
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
             elif self.dirctn  == 'up':
                 self.state = 'app'
+            elif self.dirctn == 'down':
+                self.state = 'HW'
+                print("HW")
         elif self.state == 'app':
-            if self.dirct == 'up':
-                self.state == 'exec'
-
+            if self.dirctn == 'up':
+                self.state = 'exec'
+                print("PRESS UP TO EXECUTE!")
+            elif self.dirctn == 'down':
+                self.state = 'apps'
+                print("apps")
         elif self.state == 'exec':
             print("EXECUTE!")
             self.state = 'app'
+            pubsub.setPubEvents(self.currentHWName,self.dt.app_config)
+            pubsub.setSubRegisterFirstClassObject(self.currentHWName,self.currentAppName,self.dt.app_config)
+            self.prnt()
+            pubsub.pub.dispatch("sample_rate",122)
 
         elif self.state == 'application_on':
             if self.dirctn == 'left':
@@ -86,16 +85,13 @@ class Menu(object):
             elif self.dirctn == 'right':
                 self.indexApp = levelUp(self.indexApp, self.maxAppIndex)
                 self.currentAppName = self.dt.app_config.get(self.currentHWName).get("applications")[self.indexApp]
-
-        elif self.dirctn == 'down':        
-            self.updateMaxIndex()
-
         if type(self.dirctn)!=type(None):
             self.prnt()
+
     def updateMaxIndex(self):
         #print("updating device state to",self.device.state)
-        self.maxAppIndex = len(self.dt.app_config.get(self.currentHWName).get("applications"))
-        self.maxHWIndex = len(self.dt.this_thing.get("hardware"))
+        self.maxAppIndex = len(self.dt.app_config.get(self.currentHWName).get("applications")) - 1
+        self.maxHWIndex = len(self.dt.this_thing.get("hardware")) - 1
 
     def prnt(self):
         init(128*3,64*3) # initialize a 16x3 display#draw the three lines passed as a list
@@ -107,7 +103,7 @@ class Menu(object):
 
 
 def levelUp(level,maxLevel):
-    if level < maxLevel-1:
+    if level < maxLevel:
         return level + 1
     else: return 0
 def levelDown(level, maxLevel):
@@ -185,7 +181,7 @@ class SimpleDevice(object):
     def on_event(self, event):
         self.state = self.state.on_event(event)
 '''
-
+#code attribution goes to PrashantMohta https://github.com/PrashantMohta/mlcd/blob/master/mlcd_example.py
 import pygame
 def init(chars,lines):
     global screen

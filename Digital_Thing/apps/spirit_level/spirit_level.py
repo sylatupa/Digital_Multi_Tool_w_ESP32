@@ -1,8 +1,5 @@
 global x,y,x,trigger,sr,threshold
-print("in spirit")
-print("in spirit")
-print("in spirit")
-print("in spirit")
+print("spirt modulee was imported")
 def x():
     try:
         x = accel.x()
@@ -12,9 +9,10 @@ def x():
 
 def x(m):
     x = m
-    print("new accel x: ",x)
+    print("$$$new accel x: ",x)
 
 def y():
+    print("$$$new accel y ")
     try:
         y = accel.y()
     except:
@@ -31,10 +29,11 @@ def trigger():
     return True 
 
 def sample_rate(message):
-    print('new sample rate', message)
+    print('$$$new sample rate', message)
     sr = message
 def trigger_threshold(message):
     threshold = message
+    print ('$$$spirit level threshold change to: ',threshold)
 
 try:
     accel = pyb.Accel()

@@ -4,7 +4,7 @@
     "wifi": {
       "ssid": null
     },
-    "publishes": [
+    "events": [
       {"id":"thing_id"},
       {"id":"wifi/ssid"}
     ],
@@ -18,28 +18,19 @@
   }
   ,
   "touchpins":{
-    "applications":["touchpins","notes","cutoff","resonance"],
-    "publishes": [
+    "freq" : "1",
+    "events": [
       {"id":"up","pin":12},
       {"id":"left","pin":13},
       {"id":"right","pin":14},
       {"id":"down","pin":15}
     ]
   },
-  "keyboard":{
-    "applications":["keyboard4"],
-    "publishes": [
-      {"id":"up"},
-      {"id":"left"},
-      {"id":"right"},
-      {"id":"down"}
-    ]
-  },
   "onboard_temp":{
-    "applications":["temperature","trigger_above","trigger_below"],
-    "publishes": [
-      {"id":"x"},
-      {"id":"trigger"}
+    "freq" : "1",
+    "events": [
+      {"id":"temp"},
+      {"id":"trigger_temp"}
     ],
     "subscribes": [
       {"id":"sample_rate"},
@@ -49,20 +40,20 @@
     ]
   } ,
   "magnetic_field":{
-    "applications":["magnetic_field"],
-    "publishes": [
-      {"id":"x","pin":21},
-      {"id":"trigger"},
-      {"id":"active"}
+    "freq" : "1",
+    "events": [
+      {"id":"hall","pin":21},
+      {"id":"trigger"}
     ],
     "subscribes": [
-      {"id":"sample_rate"}
+      {"id":"sample_rate"},
+      {"id":"trigger_threshold"}
     ]
   } ,
 
-  "accelerometer":{
-    "applications":["spirit_level","notes","cutoff","resonance"],
-    "publishes": [
+  "spirit_level":{
+    "freq" : "1",
+    "events": [
       {"id":"x","pin":31},
       {"id":"y","pin":32},
       {"id":"z","pin":33},
@@ -73,42 +64,38 @@
       {"id":"trigger_threshold"}
     ]
   },
-  "neopixels":{
-    "applications":["menupixel","triggered_visual","cycle","bounce","fadeInOut"],
+  "haptic_feedback":{
+    "freq" : "1",
     "subscribes": [
-      {"id":"trigger_threshold"},
+      {"id":"hall"},
+      {"id":"trigger"},
+      {"id":"sample_rate"},
+      {"id":"x","pin":26}
+    ]
+  },
+
+  "neopixels":{
+    "freq" : "1",
+    "subscribes": [
+      {"id":"trigger"},
       {"id":"sample_rate"},
       {"id":"x","pin":26},
-      {"id":"length","value":10},
-      {"id":"trigger_app","value":10}
-    ]
-  },
-  "neopixels144":{
-    "applications":["menupixel","visual_ize"],
-    "subscribes": [
-      {"id":"x","pin":26,"variable":"x"},
-      {"id":"y","variable":"length","default":10},
-      {"id":"sample_rate","variable":"sample_rate","default":40}
-    ]
-  },
-  "neopixels7":{
-    "applications":["menupixel","visual_ize"],
-    "subscribes": [
-      {"id":"x","pin":26,"variable":"x"},
-      {"id":"y","variable":"length","default":10},
-      {"id":"sample_rate","variable":"sample_rate","default":40},
-      {"id":"length","value":7}
+      {"id":"y","pin":26},
+      {"id":"z","pin":26},
+      {"id":"length","value":10}
     ]
   },
   "play_sound":{
+    "freq" : "1",
     "subscribes": [
-      {"id":"trigger_threshold"},
+      {"id":"trigger"},
       {"id":"sample_rate"},
       {"id":"light","pin":22}
     ]
   },
   "spy_bug":{
-    "publishes": [
+    "freq" : "1",
+    "events": [
       {"id":"sound","pin":31},
       {"id":"trigger"}
     ],

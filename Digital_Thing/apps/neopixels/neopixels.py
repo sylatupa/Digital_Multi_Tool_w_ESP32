@@ -1,11 +1,49 @@
+try:
+    import machine, neopixel
+except:
+    pass
 import time
-import machine, neopixel
 
-global threshold, sr, x_val, l
-def trigger_threshold(message):
-    threshold = message
+global threshold, sr, x_val, l, sampleRate
+def trigger(message=None):
+    try:
+        print("_______________NeoPixels triggerd------",__name__)
+
+    except:
+        print("NeoPixels triggerd------",__name__)
+
+
+def sample_rate(message=2/60):
+    sampleRate = message
+
+
+def x():
+    message = '222222'
+    print("X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
+    x_val = message
+
+def y():
+    message = '222222'
+    print("Y~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
+    x_val = message
+
+def z():
+    message = '222222'
+    print("Z~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
+    x_val = message
+
+
 
 def x(message):
+    print("X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
+    x_val = message
+
+def y(message):
+    print("Y~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
+    x_val = message
+
+def z(message):
+    print("Z~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
     x_val = message
 
 def length(message):

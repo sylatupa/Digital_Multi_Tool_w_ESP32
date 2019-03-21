@@ -1,34 +1,103 @@
 
+import os
 '''makes a subscriber, this appName must have the functions it wil register with'''    
-def setSubRegisterFirstClassObject(hw,appName,app_config):
-    import os
-    app = __import__(("hardware"), fromlist=[appName])
-    app = getattr(app,appName)
-    for subs in app_config.get(hw).get("subscribes"):
-        print(subs)
-        setPubRegister(subs.get("id"),app)
-
-
 '''for the event name, add the firsts class object (the function to call) '''
-def setPubRegister(subscriber, pubEventName ):
-    pub.register(subscriber ,pubEventName)
+app_pbrs = dict()
 
-'''for the event name, send the value to all registered subscribers '''
-def runPubDispatch(pubEventName,value):
-    pub.dispatch(pubEventName,value)
-    #pub.dispatch("lunch", "It's lunchtime!") 
+def init_new_app_pbr(app_pbr_name,app_config):
+    app_pbr = App_Pbr(app_pbr_name,app_config)
+    # TODO set the events for the app_pbr
+    #for app_pbr_key, app_pbr_val in app_config[app_pbr_name].get("events"):
+    app_pbrs[app_pbr_name] = app_pbr
+    set_app_pbr_events(app_pbr_name,app_config)
+    refresh_app_pbrs_subscribers(app_config,app_pbrs)
 
-'''1) add all the events for the publisher'''
-def setPubEvents(hw,app_config):
-    if app_config.get(hw).get("publishes"):
-        for route in app_config.get(hw).get("publishes"):
-            published_routes.append(route["id"])
-            pub.add_event(route["id"])
-    if app_config.get(hw).get("subscribes"): 
-        #a subscriber exsists with-out a corresponding publisher it fails, so adding all the subscriber routes too.
-        for route in app_config.get(hw).get("subscribes"):
-            published_routes.append(route["id"])
-            pub.add_event(route["id"])
+
+
+'''
+Refreshes all the running apps with all the running app subscribers.
+So, now that the apps have thier registered subscribers when the application dispatches thier function, they can run too!
+'''
+def refresh_app_pbrs_subscribers(app_config,app_pbrs):
+    for app_name, app_val in app_pbrs.items():  #app_config.items():                                #iterate on the the APP_CONFIG
+        for sub in app_config.get(app_name).get("subscribes") or []:                             #and for each of the subscribers
+            for app_pbr, app_pbr_val in app_pbrs.items():                       #and for each of the APPLICATIONS
+                for event in app_pbr_val.events:                                #and for all the APPLICATIONS EVENTS
+                    #print("is there a match {} subscribes {} event {} "                            .format(sub.get("id")==event,sub,event))
+                    if event == sub.get("id"):                                  #SEE IF THE APP EVENT IS THE SAME AS THE SUBSCRIBER
+                        print("bringing in event {} for app {}".format(event,app_name))
+                        #import the module by the config file name
+                        module = __import__(("apps."+app_name), fromlist=[app_name]) 
+                        #print("getting module", app_name)
+                        try:
+                            module = __import__(("apps."+app_name), fromlist=[app_name])
+                            module = getattr(module,app_name)
+                            #print("getting module", module)
+                            #print(dir(module))
+                            #module = getattr(module,sub.get("id"))
+                            #print(dir(module))
+                            #print("registering", sub.get("id"), module)
+                            app_pbr_val.register(sub.get("id"),module, getattr(module, sub["id"])) #registering the subs
+                        except Exception as e: print(e)
+
+'''
+Iterates through the app config and sets all the application publisher events
+'''
+def set_app_pbr_events( app_pbr_name,app_config):
+    #try:
+    if True:
+        app_pbr = app_pbrs.get(app_pbr_name)
+        print("events for: {}, {}".format(app_pbr_name, app_pbr))
+        print(app_config.get(app_pbr_name))
+        if app_config.get(app_pbr_name):
+            for event in app_config.get(app_pbr_name).get("events") or []:
+                print("adding events  {}".format(event))
+                app_pbr.add_event(event.get("id"))
+    #except:
+
+    #    pass
+#Application Publisher class
+class App_Pbr:
+    def __init__(self,name,app_config):
+        self.name = name
+        self.events = dict()
+        self.app_events = dict()
+        self.config = app_config(gt  fo app_pbr in app_config:
+            
+
+        # maps event names to subscribers
+    def __str__(self): return self.name
+    def __cmp__(self, other):
+        return cmp(self.name, other.name)
+        # Necessary when __cmp__ or __eq__ is defined
+        # in order to make this class usable as a
+        # dictionary key:
+        # str -> dict
+    def __hash__(self):
+        return hash(self.name)
+    def add_events(self,evnts):
+        self.events = {event : dict() for event in evnts }
+    def add_event(self,evnt):
+        self.events[evnt] = dict() 
+    def get_subscribers(self, evnt):
+        return self.events[evnt]
+    def register(self, event, who, callback=None):
+        print("___registering: {}, to callback {}".format(event , getattr(who,event)))
+        #prnt_funcs(who)
+        #if callback == None:
+        #    callback = getattr(who, event)
+        self.get_subscribers(event)[who] = callback
+        #print(self.events)
+    def unregister(self, event, who):
+        del self.get_subscribers(event)[who]
+    def dispatch(self, event, message):
+        for key, val in self.events.items():
+            #newValue = event()
+            #print(newValue)  #TODO
+            for subscriber, callback in self.get_subscribers(key).items():
+                print('getting event : {} from event dictionary, sending messge {} to subscriber {} with callback {}:'.format(event,message,subscriber.__name__,callback.__name__))
+                callback(message)            
+
 
 class Subscriber:
     def __init__(self, name):
@@ -39,11 +108,8 @@ class Subscriber:
         print('{} got message "{}"'.format(self.name, message))
     def dinner(self, message):
         print('{} got message "{}"'.format(self.name, message))
-
-
     def update(self, message):
         print('{} got message "{}"'.format(self.name, message))
-
     def __str__(self): return self.name
     def __cmp__(self, other):
         return cmp(self.name, other.name)
@@ -53,81 +119,9 @@ class Subscriber:
     def __hash__(self):
         return hash(self.name)
 
-def prnt_funcs(module):
-        print("All Functions _______________________________")
-        for val in dir(module): 
-            if '__' not in val:
-                print(val)
-
-
-class Publisher:
-    def __init__(self):
-        self.events = []
-        # maps event names to subscribers
-    def __str__(self): return self.action
-    def __cmp__(self, other):
-        return cmp(self.action, other.action)
-        # Necessary when __cmp__ or __eq__ is defined
-        # in order to make this class usable as a
-        # dictionary key:
-        # str -> dict
-    def __hash__(self):
-        return hash(self.action)
-    def add_events(self,events):
-        self.events = {event : dict() for event in events }
-    def add_event(self,event):
-        self.events[event] = dict() 
-    def get_subscribers(self, event):
-        return self.events[event]
-    def register(self, event, who, callback=None):
-        print("registering: {}".format(event))
-        prnt_funcs(who)
-        #method_to_call = getattr(app, subs.get("id"))
-        #result = method_to_call("valuee")
-        #setPubRegister(subs.get("id"),method_to_call)
-        if callback == None:
-            callback = getattr(who, event)
-        self.get_subscribers(event)[who] = callback
-    def unregister(self, event, who):
-        del self.get_subscribers(event)[who]
-    def dispatch(self, event, message):
-        print('getting event : {} from event dictionary:'.format(event))
-        for key,val in self.events.items(): print("{} = {}".format(key, type(val)))
-        
-        print('sending message: {}'.format(message))
-        for subscriber, callback in self.get_subscribers(event).items():
-            print("subscribers:{}, {} ".format(type(subscriber),type(callback)))
-            callback(message)            
-'''
-{'dinner': {<pub_sub_local.Subscriber object at 0x7fbad13aa860>: <bound method Subscriber.dinner of <pub_sub_local.Subscriber object at 0x7fbad13aa860>>, <pub_sub_local.Subscriber object at 0x7fbad13aa898>: <bound method Subscriber.dinner of <pub_sub_local.Subscriber object at 0x7fbad13aa898>>},
-'lunch': {<pub_sub_local.Subscriber object at 0x7fbad13aa828>: <bound method Subscriber.lunch of <pub_sub_local.Subscriber object at 0x7fbad13aa828>>, <pub_sub_local.Subscriber object at 0x7fbad13aa898>: <bound method Subscriber.lunch of <pub_sub_local.Subscriber object at 0x7fbad13aa898>>},
-'breakfast': {},
-'x': {},
-'y': {},
-'z': {},
-'trigger': {},
-'sample_rate': {<module 'hardware.spirit_level' from '/home/spy/Digital_Multi_Tool_w_ESP32/Digital_Thing/hardware/spirit_level.py'>: <function sample_rate at 0x7fbabd10c6a8>}, 
-'trigger_threshold': {<module 'hardware.spirit_level' from '/home/spy/Digital_Multi_Tool_w_ESP32/Digital_Thing/hardware/spirit_level.py'>: <function trigger_threshold at 0x7fbabd10c730>}}
-'''
-
-subscribed_routes = []
-published_routes= []
-pub = Publisher() 
-pub.add_events({'lunch','dinner'})
-pub.add_event('breakfast')
-bob = Subscriber('Bob') 
-alice = Subscriber('Alice') 
-john = Subscriber('John') 
-pub.register("lunch", bob) 
-pub.register("dinner", alice) 
-pub.register("lunch", john) 
-pub.register("dinner", john) 
-
-
 
 if __name__ == "__main__":
     pass
-
     #ddpub = Publisher(published_routes) 
     #pub.register(str(route["id"]),this_subscriber)
 

@@ -1,8 +1,8 @@
 {
 "board_name":"ttgo_with_sd",
 "onboard_led":2,
-"hardware": [
-	"accelerometer","touchpins","neopixels","magnetic_field"
+"apps": [
+	"spirit_level","touchpins","neopixels","magnetic_field","haptic_feedback","onboard_temp","play_sound"
 ]
 }
 

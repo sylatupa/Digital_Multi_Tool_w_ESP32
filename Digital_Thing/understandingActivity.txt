@@ -11,3 +11,18 @@ speed is a magnitutde of velocity
 canceling like this can introduce noise.
 
 smoothing as parameter
+
+
+t f f   (trigger float float)
+
+to an expression that does velocity
+
+velocity is =  t2-t1
+
+accelereation =  load v2 - v1
+
+cross product patch (the top term of the curvature functions)
+
+now magnitude (the bottom term of the Curvature functions)
+
+

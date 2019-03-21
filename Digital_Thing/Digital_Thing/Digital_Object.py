@@ -1,5 +1,4 @@
 import json
-import pub_sub_local as pubsub
 _filepath = "./" 
 cf_a=  "app_config.json"    
 #cf_b =  "behavior_config.json"
@@ -35,16 +34,18 @@ def getSubscribersForApp(appname):
 #def getApplication(ele_num):
 #    return hardware.get("applications")[ele_num]
 def pruneAppConfig():
-    for hardware in this_thing.get("hardware"):
-        thisThing_has_thisHardware = False
-        for hw in app_config:
-            if hardware == hw:
-                thisThing_has_thisHardware = True
-        if thisThing_has_thisHardware == False:
+    for ap in this_thing.get("apps"):
+        remove_this = True
+        for app in app_config.copy():
+            if str(ap) == str(app):
+                remove_this = False
+                break
+        if remove_this:
             try:
-                del app_config[hardware]
+                del app_config[app]
+                break
             except:
-                print("no hardware named " + hardware + " in config file")
+                print("no hardware named " + ap + " in config file")
 
 pruneAppConfig()  #removes all the config files that arent on this thing, modify the hardware list in this_thing.json
 

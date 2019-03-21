@@ -1,51 +1,61 @@
-import time
-#import os
-#import subprocess
 import paho.mqtt.client as mqtt
+import paho.mqtt.subscribe as subscribe
 #import json
 
 class mqtt_client():
     global broker_address, client
-    broker_address="192.168.1.55"
+    def __init__(self, broker_ip, port):
+        self.port = port
+        self.broker_address=broker_ip
+        self.mqtt_topic=""
+        self.client = mqtt.Client("spyPi")
+        self.key_value = 'key val'
 
-    mqtt_topic="test"
+    def connect_client(self):
+        print("trying to connect to {}",self.broker_address)
+        self.client.connect(self.broker_address, self.port)
 
-    def on_message(client, userdata, message):
+    def on_msg(self, client, userdata, message):
         print("message received " ,str(message.payload.decode("utf-7")))
-        print("topic=",message.topic , " ,qos=" , message.qos , " ,retain_flag=",message.retain)   
+        self.key_value = str(message.payload.decode("utf-7"))
         obj = json.loads(str(message.payload.decode("utf-8")))    
         val = obj['v']
-        print("received ", val  )
-    
-    def connect_client(self):
-        try:
-            global client
-            client = mqtt.Client("spyPi")
-            client.connect(broker_address, 1883)
-            #client.on_message=on_message
-            client.loop_start()
-        except:
-            pass
 
-    def publish_data(self,date):
-        client.publish(data["topic"],str(data["m"]) )  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
+    def get_key_value(self):
+        v = self.key_value
+        self.key_value = ''
+        return v
 
-    def publish_data2(self, topic, data):
-        client.publish(topic, data)  #FUDI FORMATTED https://stackoverflow.com/questions/31811448/from-node-red-to-pure-data-with-udp
+    def publish_data(self,data):
+        self.client.connect(self.broker_address, self.port)
+        self.client.publish(data["topic"],str(data["message"]) )
+
     def test_publish(self):
-        print("Top")
+        self.client.publish("up","1.0")
+        self.client.publish("down","1.0")
+        self.client.publish("left","1.0")
+        self.client.publish("test3","3.0")        
+        self.client.publish("apples", 5.0)
+                    
+if __name__== "__main__":
+    import time
+    broker_ip =  "192.168.1.55"
+    #broker_ip =  "localhost"
+    broker_ip = "127.0.0.1"
+    #broker_ip = "192.168.0.135"
+    port = 1883
+    m = mqtt_client(broker_ip, port)
+    m.connect_client()
+    m.client.loop_start()
+    #m.client.loop_forever()
+    m.test_publish()
+    #subscribe.callback(m.on_msg, "up", hostname=m.broker_address,port=m.port)
+    m.client.subscribe("menu", qos=0)
+    m.client.on_message = m.on_msg
+    while True:
+        print("looping in for mqtt")
+        time.sleep(.4)
 
-        client.publish("up","1.0")
-        time.sleep(1)
-        client.publish("down","1.0")
-        time.sleep(1)
-        client.publish("left","1.0")
-        time.sleep(1)
-        client.publish("test3","3.0")        
-        time.sleep(1)
-        client.publish("apples", 5.0)
-
-    #connect_client()
 
     #data = {"topic":"spyPi/direction/right", "m":22 }
     #publish_data(data)
@@ -55,8 +65,3 @@ class mqtt_client():
     #publish_data(data)
     ##test_publish()
     #print(data["topic"] , "    ", data["m"])
-
-if __name__== "__main__":
-    m = mqtt_client()
-    m.connect_client()
-    m.test_publish()

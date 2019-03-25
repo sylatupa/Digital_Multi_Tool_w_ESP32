@@ -20,15 +20,15 @@ class Menu(object):
         self.maxPubIndex    = 0
         self.maxSubIndex    = 0
         self.state          = "apps"
-        self.prntDict = {"apps":"search apps <-->","app":"app configs <-->, Exec ^ Back v "}
     def menu_event(self, dirctn):
         self.dirctn = dirctn
+        '''
         for app_pbr_key,app_pbr_val in self.pubsub.app_pbrs.items():
-            print("trying: ",app_pbr_key)
             for event_key, event_val in app_pbr_val.events.items():
                 try:
                     app_pbr_val.dispatch(event_key,random.random())    
                 except Exception as e: print(e)
+        '''
         if self.state == 'pass':
             pass
         elif self.state == 'apps':
@@ -56,6 +56,8 @@ class Menu(object):
             self.state = 'apps'
             #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             self.pubsub.init_new_app_pbr(self.currentAppName,self.dt.app_config)
+
+            self.mqtt_client.subscribes(self.currentAppName +"/#", 0)
             #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         elif self.dirctn == 'quit':
             sys.exit()

@@ -1,16 +1,54 @@
+'''
+module initiates all the peripherial functions and data to run on a desktop:
+  ...
+
+Attributes
+----------
+name : str      the name of the animal
+Methods
+-------
+says(sound=None)    Prints the animals name and what sound it makes
+says_str = "A {name} says {sound}"
+
+'''
 broker_ip =  "192.168.1.55"
-#broker_ip =  "localhost"
-broker_ip = "127.0.0.1"
 #broker_ip = "192.168.0.135"
 port = 1883
 
-import touchpins
-import machine  
-import utime
-from machine import Timer
-import hardware.neopixel as px
-px.main(20,25)
+#import touchpins
+import machine 
+try:
+    import Network.wifi_adptr as wifi
+    wifi.connect("spyprjct-219","789sumrX")
+except:
+    print("no wifi")
 
+#import utime
+#from machine import Timer
+#import hardware.neopixel as px
+#px.main(20,25)
+import sys
+import Network.mqtt_client.esp32_client as mqtt_client 
+import touchpin_getch as getch
+
+
+import gui as gui_client
+#global getch, gui_client, mqtt_client
+getch = getch._Getch()  #TODO:esp32 convert
+
+mqtt_client = mqtt_client.mqtt_client(broker_ip, port)
+print(mqtt_client)
+mqtt_client.connect_client()
+#mqtt_client.client.loop_start()
+#m.client.loop_forever()
+#mqtt_client.test_publish()
+#subscribe.callback(m.on_msg, "up", hostname=m.broker_address,port=m.port)
+
+mqtt_client.client.subscribe("menu", qos=0)
+mqtt_client.client.on_message = mqtt_client.on_msg
+     
+
+'''
 t1 = Timer(0, 10)
 t2 = Timer(1, 3)
 t1.callback(lambda t: print(t, "tick1"))
@@ -40,3 +78,4 @@ tim.prescaler(2)                # set prescaler (can also get)
 tim.period(199)                 # set period (can also get)
 tim.callback(lambda t: ...)     # set callback for update interrupt (t=tim instance)
 tim.callback(None)              # clear callback
+'''

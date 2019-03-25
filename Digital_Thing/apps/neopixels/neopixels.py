@@ -7,54 +7,44 @@ import time
 global threshold, sr, x_val, l, sampleRate
 def trigger(message=None):
     try:
-        print("_______________NeoPixels triggerd------",__name__)
+        print(">>>",__name__," success")
 
     except:
-        print("NeoPixels triggerd------",__name__)
+        print(">>>",__name__)
 
 
 def sample_rate(message=2/60):
     sampleRate = message
-
-
-def x():
-    message = '222222'
-    print("X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
-
-def y():
-    message = '222222'
-    print("Y~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
-
-def z():
-    message = '222222'
-    print("Z~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
-
-
+np = neopixel.NeoPixel(machine.Pin(23), 20)
+def clear():
+    for i in range(20):
+        np[i] = (0,0,0)
+        np.write()
 
 def x(message):
-    print("X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
+    clear()
+    if message == 'left':
+        print("neo, ", message)
+
+    elif message == 'right':
+
+        print("neo, ", message)
+
+    #np[int((message/255)*20)] = (message, message, message)
+    np.write()
 
 def y(message):
-    print("Y~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
+    np[int((message/255)*20)] = (message, message, message)
+    np.write()
+    print("neo, ", message)
 
 def z(message):
-    print("Z~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEO PIXEL HOOOOOO {}".format(message))
-    x_val = message
-
+    np[int((message/255)*20)] = (message, message, message)
+    np.write()
+    print("neo, ", message)
+    
 def length(message):
     l = message
-
-def clear(count,pin):
-    n = count
-    np = neopixel.NeoPixel(machine.Pin(pin), count)
-    for i in range(n):
-        np[i] = (0, 0, 0)
-    np.write()
 
 def cycle(count,pin):
     n = count

@@ -1,30 +1,38 @@
 global x,y,x,trigger,sr,threshold
+import random as r
+
+import machine
+import sys
+import utime
+
+
+#INTO GS a * 1.6 / 32.0
+
+
 print("spirt modulee was imported")
 def x():
     try:
-        x = accel.x()
-    except:
-        x = 666
-    return x
+        xv = xChange(xp.read())
+        #xv = int((xp.read()/ 1024) * 255)
+    except Exception as e:
+        print(e)
+        xv = 'none' #r.random()
+    return xv
 
-def x(m):
-    x = m
-    print("$$$new accel x: ",x)
 
 def y():
-    print("$$$new accel y ")
     try:
-        y = accel.y()
+        yv = yChange(yp.read()) #int((yp.read()/ 1024) * 255)
     except:
-        y = 666
-    return y
+        yv = 'none' #r.random()
+    return yv
 
-def z():
+def z(): 
     try:
-        z = accel.z()
+        zv = zChange(zp.read()) #int((zp.read()/ 1024) * 255)
     except:
-        z = 666
-    return z
+        z = 'none' # r.random()
+    return zv
 def trigger():
     return True 
 
@@ -35,9 +43,49 @@ def trigger_threshold(message):
     threshold = message
     print ('$$$spirit level threshold change to: ',threshold)
 
-try:
-    accel = pyb.Accel()
-    SENSITIVITY = 3
-    y = accel.y()
-except:
-    print("spirit_level failed because not on esp32")
+#adc = machine.ADC(adc_pin)
+#try:
+if True:
+    from machine import Pin, ADC 
+    xp = ADC(Pin(34))
+    #xp.width(ADC.WIDTH_10BIT)
+    #xp.atten(ADC.ATTN_11DB)
+    yp = ADC(Pin(35))
+    #yp.width(ADC.WIDTH_10BIT)
+    #yp.atten(ADC.ATTN_11DB)
+    zp = ADC(Pin(32))
+    #zp.width(ADC.WIDTH_10BIT)
+    #zp.atten(ADC.ATTN_11DB)
+
+
+
+#except Exception as e:
+#    print(e)
+#    print("spirit_level failed because not on esp32")
+
+xhistory = []
+yhistory = []
+zhistory = []
+
+def xChange(xval):
+    xChange = xhistory[0] - xval
+    xhistory[0] = xval;
+    if xChange > 2:
+        return "left";
+    elif xChange < -2:
+        return "right";
+def yChange(yval):
+    yChange = yhistory[0] - yval
+    yhistory[0] = yval;
+    if yChange > 2:
+        return "forward";
+    elif yChange < -2:
+        return "backward";
+
+def zChange(zval):
+    zChange = zhistory[0] - zval
+    zhistory[0] = zval;
+    if zChange > 2:
+        return "up";
+    elif zChange < -2:
+        return "down";

@@ -8,17 +8,21 @@ except:
 xsize = 128*12
 ysize = 64*12
 try:
+    print("OLED INIT")
     import machine
     import libs.ssd1306 as ssd1306 
+    import time
     i2c = machine.I2C(scl=machine.Pin(22), sda=machine.Pin(21))
     oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
     oled.fill(0) 
-    oled.text('MicroPython on', 0, 0)
-    oled.text('an ESP32 with an', 0, 10)
-    oled.text('attached SSD1306', 0, 20)
-    oled.text('OLED display', 0, 30)
+    oled.text('**DC Multi-Tool**', 0, 0)
+    oled.text('****************', 0, 10)
+    oled.text('', 0, 20)
+    oled.text('', 0, 30)
     oled.show()
+    time.sleep(1)
+    print("OLED INIT")
 except Exception as e:
     print(e)
 
@@ -30,8 +34,9 @@ def rmVwl(strng):
 def prnt(menuo,pubsubs):
     #for key,val in menuo.events.items(): print("{} = {}".format(key, type(val)))
     fullPrint = []
-    fullPrint.append(str(prntDict.get(menuo.state))  )
-    fullPrint.append( str(menuo.indexApp)+"/"+str(menuo.maxAppIndex) +" "+ rmVwl(menuo.currentAppName) )
+    fullPrint.append(str(prntDict.get(menuo.state)) )
+
+    fullPrint.append( str(menuo.indexApp)+"/"+str(menuo.maxAppIndex) +" "+ rmVwl(menuo.currentAppName) + " "+ str(menuo.app_st_menu[menuo.app_st_num]) )
 
     for app_pbr in pubsubs.app_pbrs: 
         fullPrint.append(app_pbr+":")
@@ -39,16 +44,15 @@ def prnt(menuo,pubsubs):
             for k,v in pubsubs.app_pbrs.get(app_pbr).events.items():
                 callbacks = '    '
                 for key in v.keys():
-                    callbacks += str(key) + ', '        
-                    #callbacks += str(key.__name__.split('.')[2]) + ', '        
+                    callbacks += str(key) + ', ' 
+            #callbacks += str(key.__name__.split('.')[2]) + ', '        
             #fullPrint.append("-" + str((event)) + " " + (callbacks))
-            fullPrint.append("-" + str(rmVwl(event)) + " " + rmVwl(callbacks))
+            fullPrint.append(str(prnt_data_dict.get(event)) + " ->" + str(rmVwl(event)) + " " + rmVwl(callbacks))
         #fullPrint +=pubs
         str_array = ""
         '''
         length = xsize /20
         for x in pubs:
-            
             str_array +="--"
             for c in x:
                 if len(str_array)<length:
@@ -66,29 +70,27 @@ def prnt(menuo,pubsubs):
             
         #    ])
     try:
-        print(fullPrint)
-    except:
-        pass
-    try:
         draw(fullPrint)
     except Exception as e:
-        print(e)
         pass
     try:
         drawOled(fullPrint)
-    except:
+    except Exception as e:
         pass
-
 prnt_data_dict= dict()
 
 def prnt_data(app_event,m):
     prnt_data_dict[app_event] = m
+    n = 2
+    '''
     for key,val in prnt_data_dict.items():
-        oled.text(ket, 0, n*10)
+        oled.text(key + ": " + str(val), 0, n*10)
         oled.show()
+        n += 1
+    '''
 
 def drawOled(fullPrint):
-    oled.fill(0) 
+    oled.fill(0)
     for n in range(0,len(fullPrint)):
         oled.text(fullPrint[n], 0, n*10)
         oled.show()
@@ -119,7 +121,8 @@ def draw(args):
             i+=1
         pygame.display.flip()
     except Exception as e:
-        print(e)
+        #print("pygame err:",e)
+        pass
 
 try:
     init(xsize,ysize) # initialize a 16x3 display#draw the three lines passed as a list

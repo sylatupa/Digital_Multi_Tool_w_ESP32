@@ -20,6 +20,8 @@ class Menu(object):
         self.maxPubIndex    = 0
         self.maxSubIndex    = 0
         self.state          = "apps"
+        self.app_st_menu    = ["Select","MQTT","DeSelect"]
+        self.app_st_num     = 0
     def menu_event(self, dirctn):
         self.dirctn = dirctn
         '''
@@ -46,19 +48,36 @@ class Menu(object):
                 print("Lowest")
         elif self.state == 'app':
             if self.dirctn == 'up':
-                self.state = 'exec'
-                print("____EXECUTE!____")
+                if self.app_st_menu[self.app_st_num] == "DeSelect":
+                    self.state = 'remove'
+                elif self.app_st_menu[self.app_st_num] == "Select":
+                    self.state = 'exec'
+                    print("____EXECUTE!____")
+                elif self.app_st_menu[self.app_st_num] == "MQTT":
+                    pass
             elif self.dirctn == 'down':
                 self.state = 'apps'
                 print("apps")
+            elif self.dirctn == 'left':
+                self.app_st_num = levelUp(self.app_st_num, 2)
+            elif self.dirctn == 'right':
+                self.app_st_num = levelUp(self.app_st_num, 2)
+
         elif self.state == 'exec':
             print("EXECUTE!")
             self.state = 'apps'
-            #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             self.pubsub.init_new_app_pbr(self.currentAppName,self.dt.app_config)
-
-            self.mqtt_client.subscribes(self.currentAppName +"/#", 0)
+            #self.mqtt_client.subscribes(self.currentAppName +"/#", 0)
+ 
+        elif self.state == 'remove':
+            print("remove!")
+            self.state = 'app'
             #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            self.pubsub.remove_app_pbr(self.currentAppName,self.dt.app_config)
+            #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
         elif self.dirctn == 'quit':
             sys.exit()
 if __name__ == '__main__':

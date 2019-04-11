@@ -1,8 +1,14 @@
 hallV =666
 triggerV = 555
 #pubs
+try:
+    import esp32
+except:
+    print("failed import hall")
+
+
 def hall():
-    return 666
+    return esp32.hall_sensor()
 
 #pubs
 def trigger_threshold(message=None):

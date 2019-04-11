@@ -2,12 +2,13 @@ class _Getch:
     """Gets a single character from standard input.  Does not echo to the screen."""
     def __init__(self):
         touchpin_dict = dict()
-        touchpin_dict["up"] = {"pin":"22"}
-        touchpin_dict["down"] = {"pin":"23"}
-        touchpin_dict["left"] = {"pin":"24"}
-        touchpin_dict["right"] = {"pin":"25"}
+        touchpin_dict["up"] = {"pin":"0"}
+        touchpin_dict["down"] = {"pin":"4"}
+        touchpin_dict["left"] = {"pin":"13"}
+        touchpin_dict["right"] = {"pin":"15"}
 
         self.impl = _GetchESP32()
+        print("TOUCH PINS!!")
         try:
             self.impl.configure()
         except:

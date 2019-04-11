@@ -7,7 +7,7 @@ class mqtt_client():
         self.broker_address=broker_ip
         self.mqtt_topic=""
         self.key_value = 'key val'
-        self.client = MQTTClient("umqtt_client", "192.168.1.55")
+        self.client = MQTTClient("umqtt_client", broker_ip)
         #self.client.disconnect()
         self.client.set_callback(self.on_msg)
         #c.connect()
@@ -15,6 +15,10 @@ class mqtt_client():
 
     def subscribes(self,route,q=0):
         self.client.subscribe(route)
+
+    def unsubscribes(self,route,q=0):
+        self.client.unsubscribe(route)
+
 
     def connect_client(self):
         print("trying to connect to {}",self.broker_address)
@@ -52,10 +56,10 @@ def sub_cb(path,message):
 
 if __name__== "__main__":
     import time
-    broker_ip =  "192.168.1.55"
+    #broker_ip =  "192.168.1.55"
     #broker_ip =  "localhost"
     #broker_ip = "127.0.0.1"
-    #broker_ip = "192.168.0.135"
+    broker_ip = "192.168.1.115"
     port = 1883
     m = mqtt_client(broker_ip, port)
     m.connect_client()

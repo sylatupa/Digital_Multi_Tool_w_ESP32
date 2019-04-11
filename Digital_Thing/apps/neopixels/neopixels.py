@@ -7,14 +7,18 @@ import time
 global threshold, sr, x_val, l, sampleRate
 def trigger(message=None):
     try:
-        print(">>>",__name__," success")
+        pass
+        #print(">>>",__name__," success")
 
     except:
-        print(">>>",__name__)
+        pass
+        #print(">>>",__name__)
 
 
 def sample_rate(message=2/60):
     sampleRate = message
+
+
 np = neopixel.NeoPixel(machine.Pin(23), 20)
 def clear():
     for i in range(20):
@@ -22,33 +26,81 @@ def clear():
         np.write()
 
 def x(message):
+    message = xChange(message)
     clear()
     if message == 'left':
-        print("neo, ", message)
-
+        for i in range(0,1):
+            np[i] = ( 200,10,111)
     elif message == 'right':
-
-        print("neo, ", message)
+        for i in range(1,2):
+            np[i] = ( 200,10,111)
 
     #np[int((message/255)*20)] = (message, message, message)
     np.write()
 
 def y(message):
-    np[int((message/255)*20)] = (message, message, message)
+    message = yChange(message)
+    if message == 'forward':
+        for i in range(3,4):
+            np[i] = ( 200,10,111)
+    elif message == 'backward':
+        for i in range(5,6):
+            np[i] = ( 200,10,111)
+
+    #np[int((message/255)*20)] = (message, message, message)
     np.write()
-    print("neo, ", message)
 
 def z(message):
-    np[int((message/255)*20)] = (message, message, message)
-    np.write()
-    print("neo, ", message)
-    
+    message = zChange(message)
+    if message == 'up':
+        pass
+        #print("z ", message)
+    elif message == 'down':
+        pass
+        #print("z ", message)
+    #np[int((message/255)*20)] = (message, message, message)
+    #np.write()
+
+xhistory = [0]
+yhistory = [0]
+zhistory = [0]
+
+def xChange(xval):
+    xChange = xhistory[0] - xval
+    xhistory[0] = xval
+    print("xd:", xChange)
+    if xChange > .3:
+        return "left";
+    elif xChange < -.3:
+        return "right";
+def yChange(yval):
+    yChange = yhistory[0] - yval
+    yhistory[0] = yval;
+    print("yd:", yChange)
+    if yChange > .035:
+        return "forward";
+    elif yChange < -.035:
+        return "backward";
+
+def zChange(zval):
+    zChange = zhistory[0] - zval
+    zhistory[0] = zval;
+    print("zd:", zChange)
+    if zChange > .25:
+        return "up";
+    elif zChange < -.25:
+        return "down";
+
+
+
+
+
 def length(message):
     l = message
 
 def cycle(count,pin):
     n = count
-    np = neopixel.NeoPixel(machine.Pin(pin), count)
+    #np = neopixel.NeoPixel(machine.Pin(pin), count)
     for i in range(4 * n):
         for j in range(n):
             np[j] = (0, 0, 0)
@@ -59,7 +111,7 @@ def cycle(count,pin):
 
 def bounce(count,pin):
     n = count
-    np = neopixel.NeoPixel(machine.Pin(pin), count)
+    #np = neopixel.NeoPixel(machine.Pin(pin), count)
     for i in range(4 * n):
         for j in range(n):
             np[j] = (0, 0, 128)
@@ -72,7 +124,7 @@ def bounce(count,pin):
 
 def fadeInOut(count,pin):
     n = count
-    np = neopixel.NeoPixel(machine.Pin(pin), count)
+    #np = neopixel.NeoPixel(machine.Pin(pin), count)
     for i in range(0, 4 * 256, 8):
         for j in range(n):
             if (i // 256) % 2 == 0:

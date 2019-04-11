@@ -29,8 +29,7 @@
   "onboard_temp":{
     "freq" : "1",
     "events": [
-      {"id":"temp"},
-      {"id":"trigger_temp"}
+      {"id":"temp"}
     ],
     "subscribes": [
       {"id":"sample_rate"},
@@ -42,8 +41,7 @@
   "magnetic_field":{
     "freq" : "1",
     "events": [
-      {"id":"hall","pin":21},
-      {"id":"trigger"}
+      {"id":"hall","pin":21}
     ],
     "subscribes": [
       {"id":"sample_rate"},
@@ -56,8 +54,7 @@
     "events": [
       {"id":"x","pin":31},
       {"id":"y","pin":32},
-      {"id":"z","pin":33},
-      {"id":"trigger"}
+      {"id":"z","pin":33}
     ],
     "subscribes": [
       {"id":"sample_rate"},
@@ -71,6 +68,13 @@
       {"id":"trigger"},
       {"id":"sample_rate"},
       {"id":"x","pin":26}
+    ]
+  },
+  "datapixels":{
+    "freq" : "1",
+    "subscribes": [
+      {"id":"hall","pin":26},
+      {"id":"temp","pin":26}
     ]
   },
 

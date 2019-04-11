@@ -16,6 +16,6 @@ def threshold_above(msg):
 def threshold_below(msg):
     thresh_below = msg
 
-def x():
+def temp():
     #esp32.temperature()
-    esp32.temperature(True)
+    return esp32.raw_temperature()

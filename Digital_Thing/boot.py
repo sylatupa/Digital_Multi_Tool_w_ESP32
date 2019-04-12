@@ -1,9 +1,10 @@
 # This file is executed on every boot (including wake-boot from deepsleep)
 #import esp
 #esp.osdebug(None)
-import webrepl
-webrepl.start()
-
+#import webrepl
+#webrepl.start()
+#import main
+#main.Run()
 
 #import pyb
 #pyb.main('main.py') # main script to run after this one

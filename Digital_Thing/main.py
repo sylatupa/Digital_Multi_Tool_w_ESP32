@@ -1,3 +1,5 @@
+
+
 broker_ip =  "192.168.1.55"
 #broker_ip =  "localhost"
 broker_ip = "127.0.0.1"
@@ -54,9 +56,9 @@ def Run():
         drctn = (menuDict.get(getch()) or mqtt_client.get_key_value() or ky)
 
         menu.menu_event(drctn)
-        #time.sleep(.01275)
+        time.sleep(.01275)
         #time.sleep(.215)
-        time.sleep(.375)
+        #time.sleep(.375)
         if type(drctn)!=type(None):
             #self.gui_client.prnt()
             #gui_client.prnt(menu, pubsub)

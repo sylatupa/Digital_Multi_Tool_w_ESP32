@@ -25,33 +25,43 @@ def clear():
         np[i] = (0,0,0)
         np.write()
 
-def x(message):
-    message = xChange(message)
-    clear()
-    if message == 'left':
-        for i in range(0,1):
-            np[i] = ( 200,10,111)
-    elif message == 'right':
-        for i in range(1,2):
-            np[i] = ( 200,10,111)
 
-    #np[int((message/255)*20)] = (message, message, message)
+
+
+clear_wait = 15
+
+count = 0
+def x(message):
+    global count, clear_wait
+    if count > clear_wait: 
+        clear()
+        count = 0
+    else:
+        count +=1
+
+    if message > .75 and message < .99:
+        for i in range(5,10):
+            np[i] = (int(message*200),0,0)
+    if message > .0 and message < .25:
+        for i in range(15,20):
+            np[i] = ( int(message*200),0,0)
     np.write()
 
 def y(message):
-    message = yChange(message)
-    if message == 'forward':
-        for i in range(3,4):
-            np[i] = ( 200,10,111)
-    elif message == 'backward':
-        for i in range(5,6):
-            np[i] = ( 200,10,111)
+    #    message = yChange(message)
 
+    if message > .25 and message < .50:
+        for i in range(10,15):
+            np[i] = ( 0,0,int(message*200))
+    if message > .75 and message < 1:
+        for i in range(0,5):
+            np[i] = ( 0,0,int(message*200))
+ 
     #np[int((message/255)*20)] = (message, message, message)
     np.write()
 
 def z(message):
-    message = zChange(message)
+    #message = zChange(message)
     if message == 'up':
         pass
         #print("z ", message)

@@ -4,7 +4,7 @@ import machine
 import sys
 #import utime
 print("spirt modulee was imported")
-nn = 2
+nn = 20 
 
 
 def x():
@@ -17,8 +17,8 @@ def x():
     #xv = xv/ nn
     #xvp = xv
     xv = xp.read()
-    #xv = xSmooth(xv)
-    #xv = xNorm(xv) 
+    xv = xSmooth(xv)
+    xv = xNorm(xv) 
     
     '''
     except Exception as e:
@@ -38,8 +38,8 @@ def y():
         #yv = yv/ (nn)
         #yvp = yv
         yv = yp.read()
-        #yv = ySmooth(yv)
-        #yv = xNorm(yv)
+        yv = ySmooth(yv)
+        yv = xNorm(yv)
  
     except Exception as e:
         print(e)
@@ -55,8 +55,8 @@ def z():
         #zv = zv / (nn)
         #zvp = zv
         zv = zp.read()
-        #zv = zSmooth(zv)
-        #zv = xNorm(zv)
+        zv = zSmooth(zv)
+        zv = xNorm(zv)
     except:
         zv = 'none' # r.random()
     return zv
@@ -89,26 +89,26 @@ zmax = 400
 zmin = 0
 def xNorm(xvl):
     global xmax,xmin
-    #if xvl > xmax:
-    #    xmax = xvl
-    #elif xvl < xmin:
-    #    xmin = xvl
+    if xvl > xmax:
+        xmax = xvl
+    elif xvl < xmin:
+        xmin = xvl
     return ((xvl - xmin) / (xmax - xmin))
 
 
 def yNorm(yvl):
     global ymax,ymin
-    #if yvl > ymax:
-    #    ymax = yvl
-    #elif yvl < ymin:
-    #    ymin = yvl
+    if yvl > ymax:
+        ymax = yvl
+    elif yvl < ymin:
+        ymin = yvl
     return ((yvl - ymin) / (ymax - ymin))
 def zNorm(zvl):
     global zmax,zmin
-    #if zvl > zmax:
-    #    zmax = zvl
-    #elif zvl < zmin:
-    #    zmin = zvl
+    if zvl > zmax:
+        zmax = zvl
+    elif zvl < zmin:
+        zmin = zvl
     return ((zvl - zmin) / (zmax - zmin))
 
 

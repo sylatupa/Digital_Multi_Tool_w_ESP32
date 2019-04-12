@@ -46,7 +46,7 @@ if __name__== "__main__":
     import time
     broker_ip =  "192.168.1.55"
     #broker_ip =  "localhost"
-    broker_ip = "127.0.0.1"
+    #broker_ip = "127.0.0.1"
     #broker_ip = "192.168.0.135"
     port = 1883
     m = mqtt_client(broker_ip, port)

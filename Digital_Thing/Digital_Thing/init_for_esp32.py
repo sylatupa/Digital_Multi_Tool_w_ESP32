@@ -12,7 +12,7 @@ says_str = "A {name} says {sound}"
 
 '''
 broker_ip =  "192.168.1.55"
-broker_ip = "192.168.1.115"
+#broker_ip = "192.168.1.115"
 port = 1883
 
 #import touchpins

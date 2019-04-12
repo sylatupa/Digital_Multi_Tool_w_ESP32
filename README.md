@@ -3,30 +3,36 @@
 https://docs.google.com/document/d/1GEC8qHzyvEeZ4Jlq5biDOddLfApk-4TvIT527VtdID8/edit?usp=sharing
 
 * The purpose of the Digital Multi tool is the following:
--- To use the ESP32, as it is a small, low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and dual-mode Bluetooth, and can be powered using a battery. 
--- To design an an enclosure for ESP32 that can speed up the design, development, implement, and iterate lifecycle. The lazer cut patterns can be downloaded and slighly adapted for future uses cases. This bridges the gap between prototyping on a breadboard to prototyping for more embedded applications.
--- To build a framework that handles the common features of the ESP32 system on a chip; with the reuse of the framework, time can be spend developing the individual programs/apps/python scripts. The framework includes the ability to navigate to different programs, run or disable them. When programs are enabled the data is shared on the board using a publisher / subscriber design patter, and the data is also shared over MQTT to a broker on the network. Other features found in the framework are WIFI connection, OLED menu display, touch sensor menu navigation (only up,down,left,right).
+** To use the ESP32, as it is a small, low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and dual-mode Bluetooth, and can be powered using a battery. 
+** To design an an enclosure for ESP32 that can speed up the design, development, implement, and iterate lifecycle. The lazer cut patterns can be downloaded and slighly adapted for future uses cases. This bridges the gap between prototyping on a breadboard to prototyping for more embedded applications.
+** To build a framework that handles the common features of the ESP32 system on a chip; with the reuse of the framework, time can be spend developing the individual programs/apps/python scripts. The framework includes the ability to navigate to different programs, run or disable them. When programs are enabled the data is shared on the board using a publisher / subscriber design patter, and the data is also shared over MQTT to a broker on the network. Other features found in the framework are WIFI connection, OLED menu display, touch sensor menu navigation (only up,down,left,right).
 
 
 https://en.wikipedia.org/wiki/ESP32
 
+# Why use the ESP32?
+## Reasonings and Motivations
 
-https://picamera.readthedocs.io/en/release-1.13/
+# Enclosure Design and Construction
+## Reasonings and Motivations
 
-# the spiPi has two features, right now
-By doing object detection with opencv, the camera sends the coordinates of these objects to a MQTT broker. Now that the feature data is out of the pi, there are a variety of functions and interesting interactions that we can do with it.
-( Please see the Digital Culture Server, here https://github.com/sylatupa/Digital_Culture_Server ; and also look here for more examples of this data being consumed: Pure Data Synthesizer: https://github.com/sylatupa/Digital-Culture-Sound-Client & IOT Device https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32  
+# The Framework 
+## Reasonings and Motivations
 
-So, this camera allows for artistic sampling of video data, a transmission of that data using a contemporary protocol MQTT.
+# The Digital_Multi_Tool use cases are listed below:
+## Classic Living System Monitor-- to observe Climate and Place Data
+* Sensors include: Temp, Humidity, Noise (Sound Amplitude), Motion, Light
 
-## Reasoning and Motivations
-IOT and the arts:
-There is so much support for raspberry pis and they are small enough to run off a battery (and they are inexpensive). This project tries to solve a few things:
-* Turning video data into a readily available data source
-* Be able to provide a direct solution to gathering video that is easy as buying something off the shelf, but provides many more benefits. For a variety of uses, such as:
--- Security of the home and business
--- Art and entertainment using video data that is collected live and in place (in situ)
--- Citizen science, for the collection of time lapse video.
+# Sound and Video Controller
+# Something Fun with Media Creation (Sound and/or Video)
+
+# Utility
+## Demonstrate some simple use cases that are 'Tool' like:
+* Light / Torch
+* Bike Light
+* Bike Blinker
+* Spirit Level to Hang a Picture
+
 
 Stand alone server benefits:
 Stand alone wifi-router: This project uses an additional wifi-router that is plugged into my homes wifi router, so it is interntet connected. But, the benefit of having this additional router layer is that I can take it with me to bring the network into locations that wouldn't have accessible wifi. Getting a battery operated wifi could make this potentially able to be run anywhere.
@@ -73,16 +79,10 @@ Now open a browser and go the the ip address for the raspberry pi, and go to por
 
 #(comment) Please read [CONTRIBUTING.md](https://gist.github.com/sylatupa/4d0b51c97d2bd8cf210a60c0e7a7d175) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
 ## Authors
-
 * **S P Y-M** - *Wrote and collected supporting code.
-* Contributors:
-
 ## License
 
-## Acknowledgments
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 

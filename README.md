@@ -76,7 +76,18 @@ Input for musical instrument
 With this application I'm demonstrating a device that has an application that works both online and offline, 'stand-alone'.
 LEDs around the edge
  
-Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool 
+Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool
+
+# Digital Multi-Tool embedded software
+Please see this chart on how the software works, and how the user can navigate through configured programs.
+https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e
+## Navigation
+
+### Software
+Using a state machine, implemented with a series of if statements that allow the user to select programs.
+
+### Hardware
+Really moving through solving the problems of the project, while not spending too much time just on navigation
 # Utility
 ## Demonstrate some simple use cases that are 'Tool' like:
 * Light / Torch

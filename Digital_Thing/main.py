@@ -1,5 +1,3 @@
-
-
 broker_ip =  "192.168.1.55"
 #broker_ip =  "localhost"
 broker_ip = "127.0.0.1"

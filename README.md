@@ -62,6 +62,11 @@ MUSIC with Accelerometer:
 --Drone that changes pitch up and down
 --Arpegiator 
 
+# The Server for Edge Computing.
+
+* Something to consider with IOT development is 'where' will the data be. This implementations networking only extends locally--no internet is needed. Instead, all computing and networking is achieved with a wifi-router and raspberry pi. The benefits that are achieved include lowering the cost of internet computing, decreasing the latency (increasing the speed that the user will experince feedback from the sensed data). And, for this project, removing the work that is required to connect to the internet allows for more time to be spent on what can actually be done with Tangible or Embedded IOT.
+
+* Node-Red and a Mosquitto (MQTT) server is used to move internetwork the data. Protocols are used such as MQTT from the Digital Thing to the Mosquitto Server and then Node-Red and then another application. The MQTT Server and Node-Red live on a Raspberry Pi that is connected by ethernet cable to a dedicated wifi router to achieve Edge Computing.
 --
 
 

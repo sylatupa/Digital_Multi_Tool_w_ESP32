@@ -3,8 +3,11 @@
 #esp.osdebug(None)
 #import webrepl
 #webrepl.start()
-#import main
-#main.Run()
+try:
+    import main
+    main.Run()
+except:
+    print("Main Did not Run")
 
 #import pyb
 #pyb.main('main.py') # main script to run after this one

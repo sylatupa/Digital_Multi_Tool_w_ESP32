@@ -1,5 +1,9 @@
 # The Enclosure for the Digital_Multi_Tool_w_ESP32 -- a lasercut, stacked sandwhich style, enclosure with simple and adaptable shapes and sizes. 
 
+# What is it?
+
+# Why do it?
+
 All the SVG paths were draw in Inkscape. Because Inkscape prints by converting to raster, the files were brought into Corel Draw. 
 There was a lot of conversion mistakes and much of my work had to be redone--but the general shapes and size were all figured out.
 There are around 6 shapes, mix and matched they are used to create various enclosures. 

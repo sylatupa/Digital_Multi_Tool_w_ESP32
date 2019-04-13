@@ -61,6 +61,18 @@
       {"id":"trigger_threshold"}
     ]
   },
+  "place_sense":{
+    "freq" : "1",
+    "events": [
+      {"id":"light","pin":31},
+      {"id":"humidty","pin":31},
+      {"id":"temp","pin":32},
+      {"id":"motion","pin":33},
+      {"id":"place_sense","pin":33},
+      {"id":"noise","pin":33}
+    ]
+  },
+
   "haptic_feedback":{
     "freq" : "1",
     "subscribes": [

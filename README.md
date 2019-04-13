@@ -1,5 +1,9 @@
 # Digital_Multi_Tool_w_ESP32 -- an internet of things, Micro-Python framework, and laser cut enclosure project..thing.
 
+# What is it?
+
+# Why? 
+
 https://docs.google.com/document/d/1GEC8qHzyvEeZ4Jlq5biDOddLfApk-4TvIT527VtdID8/edit?usp=sharing
 
 Following similar product design patterns, this project will design and develop an electronic widget and the code and patterns will be shared in an appropriate social media platform such as GitHub or ThingiVerse. People can download these instructions, code, and laser cut templates to build all, some, or customize the Multitool for their purposes. Its a Digital Tool for people living in an Analog World.

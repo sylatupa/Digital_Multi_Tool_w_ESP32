@@ -1,8 +1,15 @@
-# Digital_Multi_Tool_w_ESP32 -- an internet of things, Micro-Python framework, and laser cut enclosure project..thing.
+# Digital_Thing--a Digital Client and Multi Tool, a Micro-Python framework, for embedded and internet of things project.
 
-# What is it?
+## What is it?
 
-# Why? 
+## Why? 
+
+### Please see the following projects that were developed inS parallel. You will see the enclosure, server, and sound and video clients that work with this software
+
+* Using Node-Red, MQTT, and the OSC (UDP) protocol, data is routed from the de
+
+
+
 
 https://docs.google.com/document/d/1GEC8qHzyvEeZ4Jlq5biDOddLfApk-4TvIT527VtdID8/edit?usp=sharing
 

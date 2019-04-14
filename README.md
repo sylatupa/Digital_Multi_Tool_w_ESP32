@@ -1,7 +1,17 @@
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
-See examples to help get you started in working with digital and analog sensors, neopixels, onboard temperature and hall sensor.
+See currently configured apps to see examples, to help get you started. There are programs that work with digital and analog sensor pins on the ESP32, neopixels, onboard temperature and hall sensor, DHT11 (TempHumid), MAX9814 Amplified Microphone, OLED screen, MQTT, connecting to WiFi, and accelerometer.
+
+This Thing works on the Edge of your WiFi network. I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity. 
+
+### Parallel projects that work with the Digital Thing:
+* Digital_Culture_Server
+** A collection of Node-Red Flows and Python Scripts. This runs on a Raspberry Pi and is connected to WiFi.
+* Digital_Culture_Sound_Client
+** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi.
+* Video Synthesizer software, written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi
+** The Digital_Thing takes acclerometer data (accleration of x,y,z) and sends it over an MQTT Network. Node Red recieves this data and sends it the ETC Video Synthesizer over an OSC network.  
 
 ## What is it?
 

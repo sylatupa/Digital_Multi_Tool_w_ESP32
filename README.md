@@ -11,6 +11,7 @@ This Thing works on the Edge of your WiFi network. I have a left over wifi route
 * Digital_Culture_Sound_Client
 ** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi.
 * Video Synthesizer software, written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi
+https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes
 ** The Digital_Thing takes acclerometer data (accleration of x,y,z) and sends it over an MQTT Network. Node Red recieves this data and sends it the ETC Video Synthesizer over an OSC network.  
 
 ## What is it?
@@ -120,6 +121,7 @@ https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b347049
 
 ### Software
 Using a state machine, implemented with a series of if statements that allow the user to select programs.
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
 
 ### Hardware
 Really moving through solving the problems of the project, while not spending too much time just on navigation

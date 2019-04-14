@@ -1,8 +1,22 @@
-# Digital_Thing--a Digital Client and Multi Tool, a Micro-Python framework, for embedded and internet of things project.
+# Digital_Thing -- a Digital Client and Multi Tool
+## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
+
+See examples to help get you started in working with digital and analog sensors, neopixels, onboard temperature and hall sensor.
 
 ## What is it?
 
+Its an Internet of Things device and its designed to adapt to the the many new IOT concepts and technologies that are being developed. It helps speed up the time it take to get prototypes from off of the work bench and into the world. It does this by solving some of common problems that developers encounter when implementing their projects. 
+
+* The affordances of this micro-python framework:
+** Python programs to run digital and analog circuits and modules.
+
+* Other resources that are documented:
+** Laser cut Temlates for the laser cut enclosure and sensor modules.
+** Mosquitto (MQTT) broker and Node-Red Flows for internetworktivity. 
+
 ## Why? 
+
+that works both online and offline
 
 ### Please see the following projects that were developed inS parallel. You will see the enclosure, server, and sound and video clients that work with this software
 

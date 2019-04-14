@@ -179,9 +179,11 @@ Python3.6:
 
 Product design and presentation like 
 * https://nsynthsuper.withgoogle.com/
+* https://enchantedobjects.com/#/ambient-orb/
 * https://github.com/googlecreativelab/open-nsynth-super 
 * https://www.instructables.com/id/MeArm-Build-a-Small-Hackable-Robot-Arm/
 * https://perso.aquilenet.fr/~sven337/english/2016/07/14/DIY-wifi-baby-monitor.html
+
 
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.

@@ -15,19 +15,19 @@ import dht
 print("place_sense was imported")
 #G4 is an acceptible pin time
 #xp.width(ADC.WIDTH_10BIT)
-#xp.atten(ADC.ATTN_11DB)
 
-dhtP = dht.DHT11(machine.Pin(35))
+dhtP = dht.DHT11(Pin(32))
 noiseP = ADC(Pin(35))
+noiseP.atten(ADC.ATTN_11DB)
 lightP = ADC(Pin(34))
-motionP = Pin('G25',mode=Pin.IN, pull=Pin.PULL_UP)
+motionP = Pin(25,mode=Pin.IN, pull=Pin.PULL_UP)
 
 def light():
     return lightP.read()
 
 def temp():
     dhtP.measure()
-    return dhtP.temperature()
+    return (dhtP.temperature() * (9/5)) + 32
 
 def humidity():
     dhtP.measure()

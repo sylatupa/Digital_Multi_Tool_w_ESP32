@@ -67,12 +67,16 @@ def fadeInOut(count,pin):
 
 if __name__=="__main__":
     pass    
-    
-ps = [4:25,1:26,3:27,20:33]
+#count, pin    
+ps = [[20,26]]
+#ps = [[5,25],[20,26],[4,27],[20,33]]
 l = 4
 def lightOn():
     while True:
-        for key,val in ps:
+        for strip in ps:
+            key = strip[0]
+            val = strip[1]
+            clear(key,val)
+            cycle(key,val)
             fadeInOut(key,val)
             bounce(key,val)
-            cycle(key,val)

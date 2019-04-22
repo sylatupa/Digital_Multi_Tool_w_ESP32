@@ -26,15 +26,24 @@ def light():
     return lightP.read()
 
 def temp():
-    dhtP.measure()
-    return (dhtP.temperature() * (9/5)) + 32
-
+    tem = 0
+    try:
+        #dhtP.measure()
+        tem = (dhtP.temperature() * (9/5)) + 32
+    except Exception as e:
+        print(e)
+    return tem
 def humidity():
-    dhtP.measure()
-    return dhtP.humidity()
+    hum = 0
+    try:
+        dhtP.measure()
+        hum = dhtP.humidity()
+    except Exception as e:
+        print(e)
+    return hum
    
 def motion():
-    return pir()
+    return motionP()
 
 def noise():
     return noiseP.read()

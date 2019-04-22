@@ -10,6 +10,9 @@ class mqtt_client():
         self.mqtt_topic=""
         self.client = mqtt.Client("spyPi")
         self.key_value = 'key val'
+        self.timeSleep = .375
+        self.publishOn = True
+        self.screenOn = True
 
     def connect_client(self):
         print("trying to connect to {}",self.broker_address)
@@ -20,9 +23,14 @@ class mqtt_client():
 
 
     def on_msg(self, client, userdata, message):
-        print("{} {} {}".format(client,userdata,message))
+        print("{} {} {} {} {} {}".format(message.dup, message.info, message.mid,message.state, message.timestamp, message.topic))
+        if "sleep" in message.topic:
+            self.timeSleep = str(message.payload.decode("utf-7"))
+        if "publish" in message.topic:
+            self.publishOn = str(message.payload.decode("utf-7"))
+        if "screen" in message.topic:
+            self.screenOn = str(message.payload.decode("utf-7"))
         print("message received " ,str(message.payload.decode("utf-7")))
-        self.key_value = str(message.payload.decode("utf-7"))
         obj = json.loads(str(message.payload.decode("utf-8")))    
         val = obj['v']
 

@@ -69,6 +69,7 @@ def prnt(menuo,pubsubs):
         #    str(str_array
             
         #    ])
+        print(fullPrint)
     try:
         draw(fullPrint)
     except Exception as e:

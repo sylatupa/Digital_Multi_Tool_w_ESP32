@@ -12,6 +12,10 @@ class mqtt_client():
         self.client.set_callback(self.on_msg)
         #c.connect()
         #c.subscribe(b"#")
+        self.timeSleep = .375
+        self.publishOn = True
+        self.screenOn = True
+
 
     def subscribes(self,route,q=0):
         self.client.subscribe(route)
@@ -26,11 +30,16 @@ class mqtt_client():
         self.client.connect()
 
     def on_msg(self,topic, message):
-        print("{} {}".format(topic.decode("utf-7") ,message.decode("utf-7")))
-        #print("message received " ,str(message.decode("utf-7")))
         self.key_value = str(message.decode("utf-7"))
-        #val = obj['v']
-
+        print(self.key_value)
+        print(topic)
+        #print("{} {} {} {} {} {}".format(message.dup, message.info, message.mid,message.state, message.timestamp, message.topic))
+        if "sleep" in topic:
+            self.timeSleep = float(self.key_value)
+        if "publish" in topic:
+            self.publishOn = self.key_value
+        if "screen" in topic:
+            self.screenOn = self.key_value
     def get_key_value(self):
         v = self.key_value
         self.key_value = ''

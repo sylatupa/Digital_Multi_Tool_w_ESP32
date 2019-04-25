@@ -1,8 +1,6 @@
 # The Enclosure for the Digital_Multi_Tool_w_ESP32 -- a lasercut, stacked sandwhich style, enclosure with simple and adaptable shapes and sizes. 
 
 # What is it?
-![alt text][logo]
-
 # Why do it?
 ![alt text][wires]
 ![alt text][wires2]
@@ -22,10 +20,20 @@ I didnt have enough time to do multiple iterations but I knew that the first cut
 * The purpose of the Digital Multi tool is the following:
 ** To design an an enclosure for ESP32 that can speed up the design, development, implement, and iterate lifecycle. The lazer cut patterns can be downloaded and slighly adapted for future uses cases. This bridges the gap between prototyping on a breadboard to prototyping for more embedded applications.
 
-
+![print1][print1]
+![print2][print2]
+![print3][print3]
+![print4][print4]
+![print5][print5]
+![print6][print6]
 
 Reference-style: 
 
-[logo]: ../Images/process_and_state_diagram.png "placeholder"
 [wires]: ../Images/wires.jpg "taken from: https://www.facebook.com/groups/esp8266microcontrollers/"
 [wires2]: ../Images/wires2.jpg "taken https://www.facebook.com/groups/esp8266microcontrollers/"
+[print1]: ../Images/PRINT1.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[print2]: ../Images/PRINT2.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[print3]: ../Images/PRINT3.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[print4]: ../Images/PRINT4.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[print5]: ../Images/PRINT5.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[print6]: ../Images/PRINT6.svg "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"

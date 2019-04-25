@@ -22,6 +22,9 @@ class Menu(object):
         self.state          = "apps"
         self.app_st_menu    = ["Select","MQTT","DeSelect"]
         self.app_st_num     = 0
+        if len(self.dt.this_thing.get("apps")) == 1:
+
+            self.pubsub.init_new_app_pbr(self.currentAppName,self.dt.app_config)
     def menu_event(self, dirctn):
         self.dirctn = dirctn
         '''

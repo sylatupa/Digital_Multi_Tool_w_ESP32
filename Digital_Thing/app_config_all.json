@@ -55,8 +55,11 @@
       {"id":"x","pin":31},
       {"id":"y","pin":32},
       {"id":"z","pin":33}
+    ],
+    "subscribes": [
+      {"id":"sample_rate"},
+      {"id":"trigger_threshold"}
     ]
-    
   },
   "place_sense":{
     "freq" : "1",

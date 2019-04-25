@@ -144,5 +144,29 @@ def fadeInOut(count,pin):
             np[j] = (val, 0, 0)
         np.write()
 
+def fadeInOutWifi(count,pin):
+    n = count
+    #np = neopixel.NeoPixel(machine.Pin(pin), count)
+    for i in range(0, 4 * 256, 8):
+        for j in range(n):
+            if (i // 256) % 2 == 0:
+                val = i & 0xff
+            else:
+                val = 255 - (i & 0xff)
+            np[j] = (0, 0, val)
+        np.write()
+
+def fadeInOutMQTT(count,pin):
+    n = count
+    #np = neopixel.NeoPixel(machine.Pin(pin), count)
+    for i in range(0, 4 * 256, 8):
+        for j in range(n):
+            if (i // 256) % 2 == 0:
+                val = i & 0xff
+            else:
+                val = 255 - (i & 0xff)
+            np[j] = (val, 0, 0)
+        np.write()
+
 if __name__=="__main__":
     fadeInOut(10,26)

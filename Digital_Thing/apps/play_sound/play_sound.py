@@ -95,8 +95,7 @@ try:
     DS8 = 4978
 
 # set up pin PWM timer for output to buzzer or speaker
-    p2 = Pin(4) # Pin Y2 with timer 8 Channel 2
-    p = Pin(4)
+    p = Pin(14)
     pw = machine.PWM(p)
     pw.duty(444)
 

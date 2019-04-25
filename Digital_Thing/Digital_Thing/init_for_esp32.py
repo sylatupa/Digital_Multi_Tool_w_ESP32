@@ -11,20 +11,25 @@ says(sound=None)    Prints the animals name and what sound it makes
 says_str = "A {name} says {sound}"
 
 '''
-
 def init(device_name, broker_ip,wifi_ssid,password):
+    import apps.neopixels.neopixels as np
+    #np.cycle(20,23)
+
     #broker_ip =  "192.168.1.55"
     #broker_ip = "192.168.1.115"
     port = 1883
 
     #import touchpins
     import machine 
+    '''
     try:
-        import Network.wifi_adptr as wifi
-        wifi.connect(wifi_ssid,password)
+        #import Network.wifi_adptr as wifi
+        #wifi.connect(wifi_ssid,password)
         #wifi.connect("spyprjct-219","")
     except:
+        np.fadeInOutWifi(20,23)
         print("no wifi")
+    '''
     '''
     led = machine.Pin(16, machine.Pin.OUT)
     for i in range(10):
@@ -35,6 +40,7 @@ def init(device_name, broker_ip,wifi_ssid,password):
         time.sleep(0.5)
     '''
     import sys
+    mqtt_client = ''
     try:
         import Network.mqtt_client.esp32_client as mqtt_client 
         mqtt_client = mqtt_client.mqtt_client(broker_ip, port)
@@ -45,14 +51,12 @@ def init(device_name, broker_ip,wifi_ssid,password):
         mqtt_client.client.subscribe(device_name+"/publish", qos=0)
         mqtt_client.client.on_message = mqtt_client.on_msg
     except:
+        np.fadeInOutMQTT(20,23)
         print("no mqtt client")
     import touchpin_getch as getch
-    import apps.neopixels.neopixels as np
-
-    np.cycle(20,23)
-    np.fadeInOut(20,23)
     np.clear()
     getch = getch._Getch()  #TODO:esp32 convert
+    #np.cycle(20,23)
 
     return getch,mqtt_client
     #from machine import Timer

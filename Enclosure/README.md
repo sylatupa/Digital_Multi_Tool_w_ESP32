@@ -55,4 +55,6 @@ Reference-style:
 [print4]: https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/enclosure/PRINT4.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
 [print5]: https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/enclosure/PRINT5.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
 [print6]: https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/enclosure/PRINT6.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
-[ALL_EXAMPLES]: https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/enclosure/ALL_EXAMPLES.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[18650]:'../Images/sensor_modules/18650_bat.png' 
+[ALL_EXAMPLES]: ../Images/enclosure/ALL_EXAMPLES.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"
+[ALL_EXAMPLES2]: https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/enclosure/ALL_EXAMPLES.svg?sanitize=true "Laser cut enclosure designed in InkScape and converted and printed using Corel Draw"

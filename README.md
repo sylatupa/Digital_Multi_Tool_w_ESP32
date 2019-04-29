@@ -3,9 +3,22 @@
 
 ![wood_enclosure][wood_enclosure]
 
-Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This_Thing works inside the [Edges](https://en.wikipedia.org/wiki/Edge_computing) of the WiFi network when paired with a Raspberry pi, a [mosquitto MQTT server](https://mosquitto.org/), and [Node-Red](https://nodered.org/). This enlocuse and construction requires little to no soldering as the connection of the Sensor modules mimics the initial stages of prototyping--using a breadboard. The enclosure and wiring solve 2 issues--An enclosure style that can adapt per project, the connections can be made and changed in a way that is commonly available and used. With these two observations about contemporary prototyping techniques: 1) [DuPont connections](https://www.google.com/search?q=dupont+connections&client=ubuntu&hs=R4r&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJvfnT4_XhAhXSvJ4KHbh-D8EQ_AUIECgD&biw=1533&bih=748) are used and 2) [Sensor modules](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190429090218&SearchText=dht) and other peripherials can typically be found with a number of male pins for voltage, ground, and data. 
+Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This_Thing works inside the [Edges](https://en.wikipedia.org/wiki/Edge_computing) of the WiFi network when paired with a Raspberry pi, a [mosquitto MQTT server](https://mosquitto.org/), and [Node-Red](https://nodered.org/). This enlocuse and construction requires little to no soldering as the connection of the Sensor modules mimics the initial stages of prototyping--using a breadboard. [The enclosure and wiring](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure) solve 2 issues--1) An enclosure with features that can adapt per project and 2) the connections can be made and changed in a way that is commonly available and used. With these two observations about contemporary prototyping techniques: 1) [DuPont connections](https://www.google.com/search?q=dupont+connections&client=ubuntu&hs=R4r&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJvfnT4_XhAhXSvJ4KHbh-D8EQ_AUIECgD&biw=1533&bih=748) are used and 2) [Sensor modules](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190429090218&SearchText=dht) and other peripherials can typically be found with a number of male pins for voltage, ground, and data. 
 
-###Here are the milestones from the project:
+## What is it?
+
+Its an Internet of Things device and its designed to adapt to the the many new IOT concepts and technologies that are being developed. It helps speed up the time it take to get prototypes from off of the work bench and into the world. It does this by solving some of common problems that developers encounter when implementing their projects. Pro
+
+* The affordances of this micro-python framework:
+** Python programs to run digital and analog circuits and modules.
+
+* Other resources that are documented:
+** Laser cut Temlates for the laser cut enclosure and sensor modules.
+** Mosquitto (MQTT) broker and Node-Red Flows for internetworktivity. 
+
+
+
+### Here are the milestones from the project:
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
 - [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some programs publish data and others subscribe to the data in a seamless way (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
 - [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here [State Machine and Process Diagram](https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/process_and_state_diagram.png) or the [Lucid Chart version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e). And the GUI with OLED found here, in the [gui.py](./Digital_Thing/gui.py)
@@ -22,25 +35,15 @@ Welcome, this repository has the code and supporting material for you to develop
 
 
 ### Parallel projects that work with the Digital Thing:
-These objects 
-* Digital_Culture_Server
-** A collection of Node-Red Flows and Python Scripts. This runs on a Raspberry Pi and is connected to WiFi.
-* Digital_Culture_Sound_Client
-** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi.
-* Video Synthesizer software, written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi
+
+* [Digital_Culture_Server](https://github.com/sylatupa/Digital_Culture_Server)
+        ** A collection of Node-Red Flows and Python Scripts. This runs on a Raspberry Pi and is connected to WiFi.
+* [Digital_Culture_Sound_Client](https://github.com/sylatupa/Digital-Culture-Sound-Client)
+        ** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi and controlled by Node-Red and This_Thing.
+* [Video_Synth-ETC_Mother_and-Modes](https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes)
+        ** written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi and controlled by Node-Red and This_Thing.
 https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes
 ** The Digital_Thing takes acclerometer data (accleration of x,y,z) and sends it over an MQTT Network. Node Red recieves this data and sends it the ETC Video Synthesizer over an OSC network.  
-
-## What is it?
-
-Its an Internet of Things device and its designed to adapt to the the many new IOT concepts and technologies that are being developed. It helps speed up the time it take to get prototypes from off of the work bench and into the world. It does this by solving some of common problems that developers encounter when implementing their projects. 
-
-* The affordances of this micro-python framework:
-** Python programs to run digital and analog circuits and modules.
-
-* Other resources that are documented:
-** Laser cut Temlates for the laser cut enclosure and sensor modules.
-** Mosquitto (MQTT) broker and Node-Red Flows for internetworktivity. 
 
 ## Why? 
 

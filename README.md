@@ -3,10 +3,11 @@
 
 ![wood_enclosure][wood_enclosure]
 
-Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This Thing works on the Edge of your WiFi network. I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity.  This system has completed features that include: 
+Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This_Thing works inside the [Edges](https://en.wikipedia.org/wiki/Edge_computing) of the WiFi network when paired with a Raspberry pi, a [mosquitto MQTT server](https://mosquitto.org/), and [Node-Red](https://nodered.org/). This enlocuse and construction requires little to no soldering as the connection of the Sensor modules mimics the initial stages of prototyping--using a breadboard. The enclosure and wiring solve 2 issues--An enclosure style that can adapt per project, the connections can be made and changed in a way that is commonly available and used. With these two observations about contemporary prototyping techniques: 1) [DuPont connections](https://www.google.com/search?q=dupont+connections&client=ubuntu&hs=R4r&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJvfnT4_XhAhXSvJ4KHbh-D8EQ_AUIECgD&biw=1533&bih=748) are used and 2) [Sensor modules](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190429090218&SearchText=dht) and other peripherials can typically be found with a number of male pins for voltage, ground, and data. 
 
+###Here are the milestones from the project:
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
-- [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
+- [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some programs publish data and others subscribe to the data in a seamless way (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
 - [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here [State Machine and Process Diagram](https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/process_and_state_diagram.png) or the [Lucid Chart version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e). And the GUI with OLED found here, in the [gui.py](./Digital_Thing/gui.py)
 - [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used found here in the [this_thing.json](./Digital_Thing/this_thing.json).
 - [x] A configuration file that lists what the program will be publishing or subscribing to , found here in the [app_config.json](./Digital_Thing/app_config.json)
@@ -140,7 +141,11 @@ https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b347049
 Using a state machine, implemented with a series of if statements that allow the user to select programs.
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
 
-### Hardware
+# Hardware
+
+OLED Screen : Benefits and reasoning
+Accelerometer sensor issue : Issues with getting any data
+
 Really moving through solving the problems of the project, while not spending too much time just on navigation
 ![18650 Battery][18650 | width=10]
 ![esp32_w_bat Board][esp32_w_bat | width=10]
@@ -149,6 +154,18 @@ Really moving through solving the problems of the project, while not spending to
 ![mma7361 accelerometer][mma7361 | width=10]
 ![mma7361_accel accelerometer][mma7361_accel | width=10]
 
+## Wifi
+I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity.  This system has completed features that include:
+
+# ESP32
+Creates its own wifi hotspot for advanced configuration and re-connecting to wifi.
+Limited inputs and outputs:
+Touch sensitive 
+Haptic Feedback
+Lithium Ion battery with on board battery charging, or it can run off usb.
+Bluetooth and Wifi
+
+# Raspberry Pi
 
 # Utility
 ## Demonstrate some simple use cases that are 'Tool' like:
@@ -165,14 +182,6 @@ Really moving through solving the problems of the project, while not spending to
 * flashlite
 * Microphone to bue tooth , microphone to SD card
 * weather station
-
-# Opportunities when using an ESP32
-Creates its own wifi hotspot for advanced configuration and re-connecting to wifi.
-Limited inputs and outputs:
-Touch sensitive 
-Haptic Feedback
-Lithium Ion battery with on board battery charging, or it can run off usb.
-Bluetooth and Wifi
 
 ## Getting Started
 
@@ -215,19 +224,7 @@ Product design and presentation like
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 
-
-
-
-Hello, thank you for meeting me today. Please read my summary of the meeting below.
-I have some sections to draw your attention:
-            ▪ rational** – see these for my discussion. Read these as my reasons for the decisions. Please push back on these if you see anything too weak, or pull it if you think its good.
-            ▪ QUESTION – I have a couple questions.
-
-Summary of what we discussed:
-    1. Walk through of device
-        1. OLED Screen : Benefits and reasoning
-        2. Accelerometer sensor issue : Issues with getting any data
-        3. Two examples of data being sampled, displayed, and sent over the network. On board Temp, Hall / Magnetic field
+    3. Two examples of data being sampled, displayed, and sent over the network. On board Temp, Hall / Magnetic field
     2. Project scope
         1. Wants
             1. Differences in the rate (freq.) of how often the programs are run (temp vs accelerometer)

@@ -142,6 +142,14 @@ https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/proces
 
 ### Hardware
 Really moving through solving the problems of the project, while not spending too much time just on navigation
+[18650]
+[esp32_w_bat]
+[esp32_w_sd]
+[max9814]
+[mma7361]
+[mma7361_accel]
+
+
 # Utility
 ## Demonstrate some simple use cases that are 'Tool' like:
 * Light / Torch
@@ -284,3 +292,10 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 
 [state_machine]: ./Images/process_and_state_diagram.png
 [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg
+
+[18650]: ./Images/sensor_modules/18650_bat.png {:height="700px" width="400px"}
+[esp32_w_bat]: ./Images/sensor_modules/esp32_w_bat.jpg
+[esp32_w_sd]: ./Images/sensor_modules/esp32_w_sd.png 
+[max9814]: ./Images/sensor_modules/max9814.jpg
+[mma7361]: ./Images/sensor_modules/mma7361.jpg 
+[mma7361_accel]: ./Images/sensor_modules/mma7361_accel.png

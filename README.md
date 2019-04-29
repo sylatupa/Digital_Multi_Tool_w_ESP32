@@ -282,4 +282,4 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 [State_Machine]
 
 
-[State_Machine]: ./Images/process_and_state_diagram.png?sanitize=true "written in Lucid charts."
+[State_Machine]: ./Images/process_and_state_diagram.png?sanitize=true "written in Lucid charts." =10x

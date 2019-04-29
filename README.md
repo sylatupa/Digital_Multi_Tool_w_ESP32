@@ -1,3 +1,12 @@
+{:.state}
+![State Machine written in Lucid Charts][state_machine]
+
+[state_machine]: ./Images/process_and_state_diagram.png
+
+.state {
+width=20px;
+}
+
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
@@ -279,7 +288,4 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 (Read this as: Not only do I like the feature, but I also think other people like these aesthetics OR novelty, too.)
 
 
-[State_Machine]
 
-
-[State_Machine]: ./Images/process_and_state_diagram.png?sanitize=true "written in Lucid charts." =10x

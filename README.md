@@ -5,13 +5,13 @@ Welcome, this repository has the code and supporting material for you to develop
 
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
 - [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)gt
-- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigatino.
+- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. [State_Machine](../Images/process_and_state_diagram.png) or the [Lucid Chard version ]( )
 - [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used.
-- [] Ability to deactivate currently running programs
-- [] Multiple wifi configurations
-- [] Using the configuration file with pin numbers, which would allow for abstraction of basic analog sensing programs and thus allow for code reuse for each new analog sensing program.
-- [] More explicit and interactive mapping of data publisher to data subscribers.
-- [] Publish data over UDP directly (rather than using a intermediate MQTT broker and Node-Red for inter-networktivity.
+- [ ] Ability to deactivate currently running programs
+- [ ] Multiple wifi configurations
+- [ ] Using the configuration file with pin numbers, which would allow for abstraction of basic analog sensing programs and thus allow for code reuse for each new analog sensing program.
+- [ ] More explicit and interactive mapping of data publisher to data subscribers.
+- [ ] Publish data over UDP directly (rather than using a intermediate MQTT broker and Node-Red for inter-networktivity.
 
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure
 
@@ -100,6 +100,7 @@ An experimental approach to the media environment
 
 # The Framework 
 ## Reasonings and Motivations
+[State_Machine]
 
 # The Digital_Multi_Tool use cases are listed below:
 ## Classic Living System Monitor-- to observe Climate and Place Data
@@ -229,13 +230,12 @@ Summary of what we discussed:
         2. Reading / Research
         3. Documentation
 
-Outcomes of meeting:
-
-    1. Writing / Documentation required outcomes
+Outcomes of meeting :
+1. Writing / Documentation required outcomes
         1. With the on-board temperature—explain its use case for getting ambient temperature
         2. Document future wants, or “What is the future for this project” “Next Steps”
         3. Document the source of code used, document in the code above the function (PEP 8 standard)
-    2. Tips on approaching the narrative:
+    2. Tips on approaching the narrative  
         1. When I hold it, I understand why I want to use it.
         2. Justification of WHY are we doing this? And demonstrate the success 
             1. Start of rational** 
@@ -280,3 +280,5 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 
 F
 
+
+[State_Machine]: ../Images/process_and_state_diagram.png "written in Lucid charts."

@@ -1,11 +1,9 @@
-{:.state}
 ![State Machine written in Lucid Charts][state_machine]
+{:.some-css-class style="width: 200px"}
 
 [state_machine]: ./Images/process_and_state_diagram.png
 
-.state {
-width=20px;
-}
+
 
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.

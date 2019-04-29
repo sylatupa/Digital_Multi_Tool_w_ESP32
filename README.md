@@ -278,8 +278,8 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
     • I like organized rainbow wires.
 (Read this as: Not only do I like the feature, but I also think other people like these aesthetics OR novelty, too.)
 
-F
+
 [State_Machine]
 
 
-[State_Machine]: ../Images/process_and_state_diagram.png "written in Lucid charts." =100x
+[State_Machine]: ../Images/process_and_state_diagram.png "written in Lucid charts."

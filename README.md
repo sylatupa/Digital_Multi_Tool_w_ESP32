@@ -148,7 +148,7 @@ Really moving through solving the problems of the project, while not spending to
 ![max9814 amplified microphone][max9814]
 ![mma7361 accelerometer][mma7361]
 ![mma7361_accel accelerometer][mma7361_accel]
-
+![new new][newnew]
 
 # Utility
 ## Demonstrate some simple use cases that are 'Tool' like:
@@ -293,9 +293,12 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 [state_machine]: ./Images/process_and_state_diagram.png
 [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg
 
-[18650]: ./Images/sensor_modules/18650_bat.png {:height="700px" width="400px"}
+[18650]: ./Images/sensor_modules/18650_bat.png
 [esp32_w_bat]: ./Images/sensor_modules/esp32_w_bat.jpg
 [esp32_w_sd]: ./Images/sensor_modules/esp32_w_sd.png 
 [max9814]: ./Images/sensor_modules/max9814.jpg
 [mma7361]: ./Images/sensor_modules/mma7361.jpg 
 [mma7361_accel]: ./Images/sensor_modules/mma7361_accel.png
+
+[newnew]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sensor_modules/18650_bat.png
+

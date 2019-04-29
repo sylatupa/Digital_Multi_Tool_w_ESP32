@@ -142,12 +142,12 @@ https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/proces
 
 ### Hardware
 Really moving through solving the problems of the project, while not spending too much time just on navigation
-[18650]
-[esp32_w_bat]
-[esp32_w_sd]
-[max9814]
-[mma7361]
-[mma7361_accel]
+![18650 Battery][18650]
+![esp32_w_bat Board][esp32_w_bat]
+![esp32_w_sd Board][esp32_w_sd]
+![max9814 amplified microphone][max9814]
+![mma7361 accelerometer][mma7361]
+![mma7361_accel accelerometer][mma7361_accel]
 
 
 # Utility

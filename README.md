@@ -1,7 +1,7 @@
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
-![wood_enclosure][wood_enclosure]
+![wood_enclosure][wood_enclosure | width=10]
 
 Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This Thing works on the Edge of your WiFi network. I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity.  This system has completed features that include: 
 
@@ -142,12 +142,12 @@ https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/proces
 
 ### Hardware
 Really moving through solving the problems of the project, while not spending too much time just on navigation
-![18650 Battery][18650]
-![esp32_w_bat Board][esp32_w_bat]
-![esp32_w_sd Board][esp32_w_sd]
-![max9814 amplified microphone][max9814]
-![mma7361 accelerometer][mma7361]
-![mma7361_accel accelerometer][mma7361_accel]
+![18650 Battery][18650 | width=10]
+![esp32_w_bat Board][esp32_w_bat | width=10]
+![esp32_w_sd Board][esp32_w_sd | width=10]
+![max9814 amplified microphone][max9814 | width=10]
+![mma7361 accelerometer][mma7361 | width=10]
+![mma7361_accel accelerometer][mma7361_accel | width=10]
 
 
 # Utility

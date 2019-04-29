@@ -5,7 +5,7 @@ Welcome, this repository has the code and supporting material for you to develop
 
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
 - [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)gt
-- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. [State_Machine](./Images/process_and_state_diagram.png?santize=true) or the [Lucid Chard version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e)
+- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. ![](./Images/process_and_state_diagram.png =100x)  or the [Lucid Chard version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e)
 - [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used.
 - [ ] Ability to deactivate currently running programs
 - [ ] Multiple wifi configurations

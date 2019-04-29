@@ -148,7 +148,7 @@ Really moving through solving the problems of the project, while not spending to
 ![max9814 amplified microphone][max9814]
 ![mma7361 accelerometer][mma7361]
 ![mma7361_accel accelerometer][mma7361_accel]
-![new new][newnew]
+
 
 # Utility
 ## Demonstrate some simple use cases that are 'Tool' like:

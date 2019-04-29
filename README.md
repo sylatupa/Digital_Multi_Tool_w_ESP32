@@ -1,6 +1,20 @@
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
+Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This system has completed features that include: 
+
+[x] Using and authenticating to Network protocols: WiFi and MQTT
+[x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)gt
+[x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigatino.
+[x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used.
+[] Ability to deactivate currently running programs
+[] Multiple wifi configurations
+[] Using the configuration file with pin numbers, which would allow for abstraction of basic analog sensing programs and thus allow for code reuse for each new analog sensing program.
+[] More explicit and interactive mapping of data publisher to data subscribers.
+[] Publish data over UDP directly (rather than using a intermediate MQTT broker and Node-Red for inter-networktivity.
+
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure
+
 See currently configured apps to see examples, to help get you started. There are programs that work with digital and analog sensor pins on the ESP32, neopixels, onboard temperature and hall sensor, DHT11 (TempHumid), MAX9814 Amplified Microphone, OLED screen, MQTT, connecting to WiFi, and accelerometer.
 
 This Thing works on the Edge of your WiFi network. I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity. 

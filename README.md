@@ -5,13 +5,16 @@ Welcome, this repository has the code and supporting material for you to develop
 
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
 - [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
-- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here ![State Machine and Process Diagram](./Images/process_and_state_diagram.png) or the [Lucid Chard version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e)
-- [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used.
+- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here [State Machine and Process Diagram](https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/process_and_state_diagram.png) or the [Lucid Chart version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e). And the GUI with OLED found here, in the [gui.py](./Digital_Thing/gui.py)
+- [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used found here in the [this_thing.json](./Digital_Thing/this_thing.json).
+- [x] A configuration file that lists what the program will be publishing or subscribing to , found here in the [app_config.json](./Digital_Thing/app_config.json)
 - [ ] Ability to deactivate currently running programs
 - [ ] Multiple wifi configurations
 - [ ] Using the configuration file with pin numbers, which would allow for abstraction of basic analog sensing programs and thus allow for code reuse for each new analog sensing program.
 - [ ] More explicit and interactive mapping of data publisher to data subscribers.
 - [ ] Publish data over UDP directly (rather than using a intermediate MQTT broker and Node-Red for inter-networktivity.
+- [x] Be able to run on a laptop for more rapid development, but then also seamlesly deploy to ESP32, the two initialization file can be found here in the [init_for_esp32.py](./Digital_Thing/init_for_esp32.py) and [init_for_desktop.py](./Digital_Thing/init_for_desktop.py)
+- [x] Design a laser cut enclosure that will speed up and bridge the gap of breadboard protoptyping to the deployment of a contained object that can be embedded in a place or interacted with-out cumbersome wires. All information found for that is found here in the [Enclosure Folder](./Enclosure).
 
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure
 

@@ -1,7 +1,7 @@
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
-![wood_enclosure][wood_enclosure | width=10]
+![wood_enclosure][wood_enclosure]
 
 Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This Thing works on the Edge of your WiFi network. I have a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity.  This system has completed features that include: 
 

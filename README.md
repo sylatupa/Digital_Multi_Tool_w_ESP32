@@ -1,18 +1,11 @@
-![State Machine written in Lucid Charts][state_machine]
-{:.some-css-class style="width: 200px"}
-
-[state_machine]: ./Images/process_and_state_diagram.png
-
-
-
 # Digital_Thing -- a Digital Client and Multi Tool
 ## A Micro-Python framework, for embedded and internet of things projects. This code was developed for the ESP32.
 
 Welcome, this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This system has completed features that include: 
 
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
-- [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)gt
-- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation.  ![State Machine and Process Diagram][State_Machine] or the [Lucid Chard version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e)
+- [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some publish data and others subscribe to the data (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
+- [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here ![State Machine and Process Diagram](./Images/process_and_state_diagram.png) or the [Lucid Chard version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e)
 - [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used.
 - [ ] Ability to deactivate currently running programs
 - [ ] Multiple wifi configurations
@@ -287,3 +280,4 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 
 
 
+[state_machine]: ./Images/process_and_state_diagram.png

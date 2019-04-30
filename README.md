@@ -21,6 +21,11 @@
 ## Introduction
   *Welcome,* this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This_Thing works inside the [Edges](https://en.wikipedia.org/wiki/Edge_computing) of the WiFi network when paired with a Raspberry pi, a [mosquitto MQTT server](https://mosquitto.org/), and [Node-Red](https://nodered.org/). This enlocuse and construction requires little to no soldering as the connection of the Sensor modules mimics the initial stages of prototyping--using a breadboard. [The enclosure and wiring](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure) solve 2 issues--1) An enclosure with features that can adapt per project and 2) the connections can be made and changed in a way that is commonly available and used. With these two observations about contemporary prototyping techniques: 1) [DuPont connections](https://www.google.com/search?q=dupont+connections&client=ubuntu&hs=R4r&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJvfnT4_XhAhXSvJ4KHbh-D8EQ_AUIECgD&biw=1533&bih=748) are used and 2) [Sensor modules](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190429090218&SearchText=dht) and other peripherials can typically be found with a number of male pins for voltage, ground, and data. 
 
+* The purpose of the Digital Multi tool is the following:
+** To use the ESP32, as it is a small, low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and dual-mode Bluetooth, and can be powered using a battery. 
+** To design an an enclosure for ESP32 that can speed up the design, development, implement, and iterate lifecycle. The lazer cut patterns can be downloaded and slighly adapted for future uses cases. This bridges the gap between prototyping on a breadboard to prototyping for more embedded applications.
+** To build a framework that handles the common features of the ESP32 system on a chip; with the reuse of the framework, time can be spend developing the individual programs/apps/python scripts. The framework includes the ability to navigate to different programs, run or disable them. When programs are enabled the data is shared on the board using a publisher / subscriber design patter, and the data is also shared over MQTT to a broker on the network. Other features found in the framework are WIFI connection, OLED menu display, touch sensor menu navigation (only up,down,left,right).
+
   ```
   Its an Internet of Things device, software and enclosure
   designed to adapt to the the many new IOT concepts and technologies
@@ -39,7 +44,7 @@
   - [ ] Using the configuration file with pin numbers, which would allow for abstraction of basic analog sensing programs and thus allow for code reuse for each new analog sensing program.
   - [ ] More explicit and interactive mapping of data publisher to data subscribers.
   - [ ] Publish data over UDP directly (rather than using a intermediate MQTT broker and Node-Red for inter-networktivity.
-      - [x] Be able to run on a laptop for more rapid development, but then also seamlesly deploy to ESP32, the two initialization file can be found here in the [init_for_esp32.py](./Digital_Thing/Digital_Thing/init_for_esp32.py) and [init_for_desktop.py](./Digital_Thing/Digital_Thing/init_for_desktop.py)
+  - [x] Be able to run on a laptop for more rapid development, but then also seamlesly deploy to ESP32, the two initialization file can be found here in the [init_for_esp32.py](./Digital_Thing/Digital_Thing/init_for_esp32.py) and [init_for_desktop.py](./Digital_Thing/Digital_Thing/init_for_desktop.py)
   - [x] Design a laser cut enclosure that will speed up and bridge the gap of breadboard protoptyping to the deployment of a contained object that can be embedded in a place or interacted with-out cumbersome wires. All information found for that is found here in the [Enclosure Folder](./Enclosure).
   - [x] A collection of python programs that demonstrate how they exsist in this embedded micro-python ecosystem, in the [folder /apps](./Digital_Thing/Digital_Thing/apps) You will see example programs that work with digital and analog sensor pins on the ESP32, neopixels, onboard temperature and hall sensor, DHT11 (TempHumid), MAX9814 Amplified Microphone, OLED screen, MQTT, connecting to WiFi, and accelerometer.
   - [x] A select on pre-built programs that collect or interact with a variety of data and data sources/sinks, found here in the [apps folder](./Digital_Thing/apps)
@@ -62,31 +67,16 @@
   ** written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi and controlled by Node-Red and This_Thing.
 
 
-  * The purpose of the Digital Multi tool is the following:
-  ** To use the ESP32, as it is a small, low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and dual-mode Bluetooth, and can be powered using a battery. 
-  ** To design an an enclosure for ESP32 that can speed up the design, development, implement, and iterate lifecycle. The lazer cut patterns can be downloaded and slighly adapted for future uses cases. This bridges the gap between prototyping on a breadboard to prototyping for more embedded applications.
-  ** To build a framework that handles the common features of the ESP32 system on a chip; with the reuse of the framework, time can be spend developing the individual programs/apps/python scripts. The framework includes the ability to navigate to different programs, run or disable them. When programs are enabled the data is shared on the board using a publisher / subscriber design patter, and the data is also shared over MQTT to a broker on the network. Other features found in the framework are WIFI connection, OLED menu display, touch sensor menu navigation (only up,down,left,right).
-
-  https://en.wikipedia.org/wiki/ESP32
-https://www.dx.com/p/mma7361-accelerometer-module-tilt-slant-angle-sensor-2017571?tc=USD&ta=US&gclid=EAIaIQobChMI_ryRraW_3wIVQyCtBh0HgghsEAQYAiABEgKiq_D_BwE#.XCRk_7dlB-E
-http://arduinolearning.com/code/arduino-mma7361-accelerometer-example.php
-https://www.hackster.io/julianfschroeter/esp32-voice-streamer-52bd7e
-
-### Please see the following projects that were developed inS parallel. You will see the enclosure, server, and sound and video clients that work with this software
-
-* Using Node-Red, MQTT, and the OSC (UDP) protocol, data is routed from the de
-
-
 Some exploritory projects and summaries of the current state of Tangible Interaction with embeded Internet of Things devices, they can be found here: [Research Summary](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/RESEARCH_SUMMARY.md). A thought provoking list can be found in *Internet of Tangible Things (IoTT)* and resonates with some of the features that can be found in the Digital_Thing and peripherial projects:
 ```
-T1. Meaningful representations and controls of  [...] connectivity status, interconnections, as well as information capture [...]
-T2. Rich Interactions that exploit the natural human skills [...]
-T3. Persistent physical representations that could last in case of power or connectivity outage [...]
-  T4. Spatial interactions [...] with multiple IOT objects
-T5. Immediacy and intuitiveness of the interaction [...] (low latency)
-  T6. [...] designed for daily routines, which free users' cognitive resources and do not disrupt attention.
-  T7. Facilitated reflections on IoT object meaning and working principles, as well as support for associating and sharing memories.
-  T8. Long-lasting interactions with IoT objects exploiting emotional durable designs, to cope with electronic waste due to technological obsolescence. 
+T1. Meaningful representations and controls of  [...] connectivity status, interconnections, as well as information capture [...].
+T2. Rich Interactions that exploit the natural human skills [...].
+T3. Persistent physical representations that could last in case of power or connectivity outage [...].
+T4. Spatial interactions [...] with multiple IOT objects.
+T5. Immediacy and intuitiveness of the interaction [...] (low latency).
+T6. [...] designed for daily routines, which free users' cognitive resources and do not disrupt attention.
+T7. Facilitated reflections on IoT object meaning and working principles, as well as support for associating and sharing memories.
+T8. Long-lasting interactions with IoT objects exploiting emotional durable designs, to cope with electronic waste due to technological obsolescence. 
   ```
 
 ## enclosure
@@ -202,7 +192,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
   [newnew]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sensor_modules/18650_bat.png
 
-  https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/2019-02-08%2020.50.47.jpg
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/2019-02-08%2020.50.47.jpg
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/hot_glue_sensor_modules.JPG

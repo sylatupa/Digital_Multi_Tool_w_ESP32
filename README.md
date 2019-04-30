@@ -14,8 +14,6 @@
   8. [Place_Sense: Classic Living System Monitor](#place_sense)
 9. [Sound and Video Controller](#controller)
   10. [The Edge Server: Raspberry Pi, Node-Red, MQTT, Wifi, and some custom Scripts](#the_server)
-  11. [Getting Started](#getting_started)
-12. [Deployment](#deployment)
 
 
 ## Introduction
@@ -157,7 +155,8 @@ https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5Ju
   Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool
 
 ## See all the videos here:
-[![all_the_things]](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
+![all_the_things]
+https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 
@@ -194,7 +193,3 @@ VIDEO LINK IMAGES
 [place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png
 [spirit_level]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
 [sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
-
-
-  An experimental approach to the media environment
-“Instead of fulfilling pre-figured roles or enacing pre-determined schema, media create conditions for social relations to emerge dynamically (or rhizomatically) in the space.” (Garrett Johnson. Catalogue of Logics of Subjectivity.)

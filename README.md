@@ -79,7 +79,8 @@ T8. Long-lasting interactions with IoT objects exploiting emotional durable desi
 
 ## enclosure
 ### Enclosure Design and Construction
-[![all_the_things]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
+
+ [A Fly By](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
 
 In anticipation that this object will change overtime, additional layers of acrylic can be added or removed to make the necessary room for any expansions made for the ESP2866. The Digital_Things physical description is a clear laser cut acrylic and wood panels, sandwiched on top of each other. The sensor modules are clearly visible inside the void of the enclosure. A small amount of color wires connect the ESP32 to the sensor modules. 
 
@@ -128,21 +129,13 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 ## place_sense
 ### Classic Living System Monitor-- to observe Climate and Place Data
   * Sensors include: Temp, Humidity, Noise (Sound Amplitude), Motion, Light
-[![place_sense]:(https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png)](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
+[![place_sense]](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
 
 ## controller
 ### Sound and Video Controller
-1. Start of rational** An accelerometer can be used as a human interface device that allows a person to digitize movement by turning acceleration of a ‘rigid body’ into 3D point data. This is desirable because… I’m interested increasing the use all parts of the human to interact with a digital system?  
-  2. Accelerometer data detects movement of objects that we are interested in.
-  5. Why collect the data away from the device?
-  1. There are additional applications that this device has a part in
-  1. This device is a controller
-  1. **DEMO
-  2. **Video Synthesizer
-  2. This device is not suitable for high quality audio. I want sound to be a feedback mechanism for the user, so that will be done in the ‘Space’ not directly to the user. Augmenting the space
-  1
+[![sound_wand](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)]
 
-![sound_wand][accelerometer wand]
+[![Some Sounds](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
 
 
 ## the_server
@@ -166,21 +159,15 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   Please see this chart on how the software works, and how the user can navigate through configured programs.
   https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e
 
-## getting_started
+## See all the videos here:
+[![all_the_things]] (https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
 
-## deployment
-  This software can be run in a variety of ways. 
-  On Ubuntu:
-  Python3.6:
-  Ubuntu-Port of Micro-Python:
-  On The ESP32:
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 
 
-  [A Fly By](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
-  [Some Sounds](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
-  [Spirit Level](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)
+ 
+  
 
   [state_machine]: ./Images/process_and_state_diagram.png
   [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg

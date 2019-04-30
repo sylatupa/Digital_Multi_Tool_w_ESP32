@@ -80,7 +80,7 @@ T8. Long-lasting interactions with IoT objects exploiting emotional durable desi
 ## enclosure
 ### Enclosure Design and Construction
 
- [A Fly By](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
+ [![A Fly By]](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
 
 In anticipation that this object will change overtime, additional layers of acrylic can be added or removed to make the necessary room for any expansions made for the ESP2866. The Digital_Things physical description is a clear laser cut acrylic and wood panels, sandwiched on top of each other. The sensor modules are clearly visible inside the void of the enclosure. A small amount of color wires connect the ESP32 to the sensor modules. 
 
@@ -91,8 +91,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 ### Navigation
   ![state_machine]
   Using a state machine, implemented with a series of if statements that allow the user to select programs.
-  https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
-
+  
 
 ## hardware
 ### sensor_modules
@@ -131,7 +130,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## controller
 ### Sound and Video Controller
-[![sound_wand]](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)]
+[![sound_wand]](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)
 
 [![Some Sounds]](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
 
@@ -142,7 +141,6 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
   The ESP32 has the ability to send data using many communication protocols, such as TCP, UDP, MQTT, Serial.
   But, this device only sends MQTT data, any additional inter-networktivity is handled using Node-Red flows.
-
 
   * Something to consider with IOT development is 'where' will the data be. This implementations networking only extends locally--no internet is needed. Instead, all computing and networking is achieved with a wifi-router and raspberry pi. The benefits that are achieved include lowering the cost of internet computing, decreasing the latency (increasing the speed that the user will experince feedback from the sensed data). And, for this project, removing the work that is required to connect to the internet allows for more time to be spent on what can actually be done with Tangible or Embedded IOT.
 
@@ -157,10 +155,6 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 [![all_the_things]] (https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
-
-
- 
-  
 
   [state_machine]: ./Images/process_and_state_diagram.png
   [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg

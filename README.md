@@ -308,7 +308,7 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
     • I like organized rainbow wires.
 (Read this as: Not only do I like the feature, but I also think other people like these aesthetics OR novelty, too.)
 
-
+[All the videos](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
 
 [state_machine]: ./Images/process_and_state_diagram.png
 [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg

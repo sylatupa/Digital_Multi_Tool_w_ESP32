@@ -55,16 +55,14 @@
 
 ## parallel_projects
 
-      The Digital_Thing is built in the context of a Digital Culture, Arts Media and Engineering, Master of Arts program and some of the following project examples are with interactive art and media. 
-
-      * [Digital_Culture_Server](https://github.com/sylatupa/Digital_Culture_Server)
-      ** A collection of Node-Red Flows and Python Scripts. This runs on a Raspberry Pi and is connected to WiFi.
-      ** The Digital_Thing takes sensor data and sends it over an MQTT Network. Node Red recieves this data and sends it the ETC Video Synthesizer and the Digital_Culture_Sound_Client, over OSC.  
-
-      * [Digital_Culture_Sound_Client](https://github.com/sylatupa/Digital-Culture-Sound-Client)
-      ** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi and controlled by Node-Red and This_Thing.
-      * [Video_Synth-ETC_Mother_and-Modes](https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes)
-  ** written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi and controlled by Node-Red and This_Thing.
+The Digital_Thing is built in the context of a Digital Culture, Arts Media and Engineering, Master of Arts program and some of the following project examples are with interactive art and media. 
+* [Digital_Culture_Server](https://github.com/sylatupa/Digital_Culture_Server)
+** A collection of Node-Red Flows and Python Scripts. This runs on a Raspberry Pi and is connected to WiFi.
+** The Digital_Thing takes sensor data and sends it over an MQTT Network. Node Red recieves this data and sends it the ETC Video Synthesizer and the Digital_Culture_Sound_Client, over OSC.  
+* [Digital_Culture_Sound_Client](https://github.com/sylatupa/Digital-Culture-Sound-Client)
+** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi and controlled by Node-Red and This_Thing.
+* [Video_Synth-ETC_Mother_and-Modes](https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes)
+** written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi and controlled by Node-Red and This_Thing.
 
 
 Some exploritory projects and summaries of the current state of Tangible Interaction with embeded Internet of Things devices, they can be found here: [Research Summary](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/RESEARCH_SUMMARY.md). A thought provoking list can be found in *Internet of Tangible Things (IoTT)* and resonates with some of the features that can be found in the Digital_Thing and peripherial projects:

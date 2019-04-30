@@ -342,3 +342,9 @@ https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_la
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
 https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
+
+VIDEO LINK IMAGES
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png

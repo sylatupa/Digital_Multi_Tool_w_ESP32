@@ -143,7 +143,8 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   2. **Video Synthesizer
   2. This device is not suitable for high quality audio. I want sound to be a feedback mechanism for the user, so that will be done in the ‘Space’ not directly to the user. Augmenting the space
   1
-[sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
+
+![sound_wand][accelerometer wand]
 
 
 ## the_server
@@ -194,25 +195,6 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   [mma7361_accel]: ./Images/sensor_modules/mma7361_accel.png
 
   [newnew]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sensor_modules/18650_bat.png
-
-<<<<<<< HEAD
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/2019-02-08%2020.50.47.jpg
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/hot_glue_sensor_modules.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/iot_network_for_artists.jpg
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/image1.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/outside_light_sensor.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/submission.png
-
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_band.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
-=======
   
 [cutting_bolts]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
 [dupont_wire_crimp]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
@@ -229,7 +211,6 @@ https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_s
 [the_layers2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
 [wire_sensor_modules]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
 [wire_sensor_modules_2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
->>>>>>> 66f7058fe7dee1a9d82952f0cab5219594695d53
 
 VIDEO LINK IMAGES
 [all_the_things]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png

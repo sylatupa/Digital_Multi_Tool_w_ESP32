@@ -91,6 +91,7 @@ T5. Immediacy and intuitiveness of the interaction [...] (low latency)
 
 ## enclosure
 ### Enclosure Design and Construction
+[![all_the_things]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
 
 In anticipation that this object will change overtime, additional layers of acrylic can be added or removed to make the necessary room for any expansions made for the ESP2866. The Digital_Things physical description is a clear laser cut acrylic and wood panels, sandwiched on top of each other. The sensor modules are clearly visible inside the void of the enclosure. A small amount of color wires connect the ESP32 to the sensor modules. 
 
@@ -134,10 +135,12 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## use_cases
 ### The Digital_Multi_Tool use cases are listed below:
+[spirit_level]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
 
 ## place_sense
 ### Classic Living System Monitor-- to observe Climate and Place Data
   * Sensors include: Temp, Humidity, Noise (Sound Amplitude), Motion, Light
+[![place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
 
 ## controller
 ### Sound and Video Controller
@@ -150,6 +153,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   2. **Video Synthesizer
   2. This device is not suitable for high quality audio. I want sound to be a feedback mechanism for the user, so that will be done in the ‘Space’ not directly to the user. Augmenting the space
   1
+[sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
 
 
 ## the_server
@@ -184,8 +188,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 
-  [All the videos](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
-  [Place Sense](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
+
   [A Fly By](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
   [Some Sounds](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
   [Spirit Level](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)
@@ -202,31 +205,29 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
   [newnew]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sensor_modules/18650_bat.png
 
-  https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/2019-02-08%2020.50.47.jpg
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/hot_glue_sensor_modules.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/iot_network_for_artists.jpg
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/image1.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/outside_light_sensor.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/submission.png
+  
+[cutting_bolts]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
+[dupont_wire_crimp]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
+[hot_glue_sensor_modules]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/hot_glue_sensor_modules.JPG
+[iot_network_for_artists]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/iot_network_for_artists.jpg
 
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_band.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
+[outside_light_sensor]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/outside_light_sensor.JPG
+[place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.JPG
+[process_and_state_diagram]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
+[submission]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/submission.png
+
+[the_band]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_band.JPG
+[the_layers]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers.JPG
+[the_layers2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
+[wire_sensor_modules]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
+[wire_sensor_modules_2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
 
 VIDEO LINK IMAGES
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
-https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
+[all_the_things]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png
+[place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png
+[spirit_level]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
+[sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
 
 
   An experimental approach to the media environment
 “Instead of fulfilling pre-figured roles or enacing pre-determined schema, media create conditions for social relations to emerge dynamically (or rhizomatically) in the space.” (Garrett Johnson. Catalogue of Logics of Subjectivity.)
-
-

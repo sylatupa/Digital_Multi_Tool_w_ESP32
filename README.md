@@ -3,6 +3,21 @@
 
 ![wood_enclosure][wood_enclosure]
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Milestones from the project](#milestones)
+3. [Parallel projects that work with the Digital_Thing](#parallel_projects)
+4. [Enclosure Design and Construction](#enclosure)
+5. [The Software](#software) 
+6. [Use Cases](#use_cases)
+7. [Place_Sense: Classic Living System Monitor](#place_sense)
+8. [Sound and Video Controller](#controller)
+9. [The Edge Server: Raspberry Pi, Node-Red, MQTT, Wifi, and some custom Scripts](#the_server)
+10. [Getting Started](#getting_started)
+11. [Deployment](#deployment)
+
+
+## Introduction
 *Welcome,* this repository has the code and supporting material for you to develop micro-python programs for the ESP32. This_Thing works inside the [Edges](https://en.wikipedia.org/wiki/Edge_computing) of the WiFi network when paired with a Raspberry pi, a [mosquitto MQTT server](https://mosquitto.org/), and [Node-Red](https://nodered.org/). This enlocuse and construction requires little to no soldering as the connection of the Sensor modules mimics the initial stages of prototyping--using a breadboard. [The enclosure and wiring](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure) solve 2 issues--1) An enclosure with features that can adapt per project and 2) the connections can be made and changed in a way that is commonly available and used. With these two observations about contemporary prototyping techniques: 1) [DuPont connections](https://www.google.com/search?q=dupont+connections&client=ubuntu&hs=R4r&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJvfnT4_XhAhXSvJ4KHbh-D8EQ_AUIECgD&biw=1533&bih=748) are used and 2) [Sensor modules](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190429090218&SearchText=dht) and other peripherials can typically be found with a number of male pins for voltage, ground, and data. 
 
 ```
@@ -11,42 +26,6 @@ designed to adapt to the the many new IOT concepts and technologies
 and speed up the time it take to get prototypes 
 from off of the work bench and into the world. 
 ```
-
-## Table of Contents
-1. [Introduction](#introduction)
-
- Milestones from the project
-## Parallel projects that work with the Digital_Thing:
-# Reasoning and Motivations
-### Micropython
-# Why use the ESP32?
-## Reasonings and Motivations
-# Enclosure Design and Construction
-# The Framework 
-# The Digital_Multi_Tool use cases are listed below:
-## Classic Living System Monitor-- to observe Climate and Place Data
-# Sound and Video Controller
-# Something Fun with Media Creation (Sound and/or Video)
-# The Server for Edge Computing.
-# Physical Description:
-# Digital Multi-Tool embedded software
-### Software
-# Hardware
-## Wifi
-# ESP32
-# Raspberry Pi
-# Utility
-## Demonstrate some simple use cases that are 'Tool' like:
-## Getting Started
-### Prerequisites
-##Networking:
-### Installing
-#### This software can be run in a variety of ways. 
-##### On Ubuntu:
-##### Ubuntu-Port of Micro-Python:
-##### On The ESP32:
-### Deployment
-
 
 ## Milestones from the project:
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
@@ -69,6 +48,7 @@ Its a Digital Tool for people living in an Analog World.
 ```
 :robot:
 
+## parallel_projects
 ## Parallel projects that work with the Digital_Thing:
 
 The Digital_Thing is built in the context of a Digital Culture, Arts Media and Engineering, Master of Arts program and some of the following project examples are with interactive art and media. 
@@ -81,11 +61,6 @@ The Digital_Thing is built in the context of a Digital Culture, Arts Media and E
         ** A sound synthesizer written in Pure Data. This runs on a Raspberry Pi and is connected to Wifi and controlled by Node-Red and This_Thing.
 * [Video_Synth-ETC_Mother_and-Modes](https://github.com/sylatupa/Video_Synth-ETC_Mother_and-Modes)
         ** written by Critter and Guitari for the ETC. This is installed on a Raspberry Pi that is connected to WiFi and controlled by Node-Red and This_Thing.
-
-
-
-
-
 
 This jewel is wifi enabled and so getting it onto the network to send OSC communication to pure data will be one demonstration. Also, controlling it with OSC, perhaps putting them in a 5x5 grid and controlling them by index.
 
@@ -100,28 +75,9 @@ But, this device only sends MQTT data, any additional inter-networktivity is han
 ** To build a framework that handles the common features of the ESP32 system on a chip; with the reuse of the framework, time can be spend developing the individual programs/apps/python scripts. The framework includes the ability to navigate to different programs, run or disable them. When programs are enabled the data is shared on the board using a publisher / subscriber design patter, and the data is also shared over MQTT to a broker on the network. Other features found in the framework are WIFI connection, OLED menu display, touch sensor menu navigation (only up,down,left,right).
 
 https://en.wikipedia.org/wiki/ESP32
-
-
-
-
 https://www.dx.com/p/mma7361-accelerometer-module-tilt-slant-angle-sensor-2017571?tc=USD&ta=US&gclid=EAIaIQobChMI_ryRraW_3wIVQyCtBh0HgghsEAQYAiABEgKiq_D_BwE#.XCRk_7dlB-E
 http://arduinolearning.com/code/arduino-mma7361-accelerometer-example.php
 https://www.hackster.io/julianfschroeter/esp32-voice-streamer-52bd7e
-
-
-# Reasoning and Motivations
-
-## Why? 
-
-### Micropython
-* The affordances of this micro-python framework:
-** Python programs to run digital and analog circuits and modules.
-
-* Other resources that are documented:
-** Laser cut Temlates for the laser cut enclosure and sensor modules.
-** Mosquitto (MQTT) broker and Node-Red Flows for internetworktivity. 
-
-that works both online and offline
 
 ### Please see the following projects that were developed inS parallel. You will see the enclosure, server, and sound and video clients that work with this software
 
@@ -274,7 +230,6 @@ Python3.6:
 
 
 
-## Introduction
 
 
 ## License

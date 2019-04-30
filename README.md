@@ -89,19 +89,17 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 ## software  
 
 ### Navigation
-  [State_Machine]
+  ![state_machine]
   Using a state machine, implemented with a series of if statements that allow the user to select programs.
   https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
 
 
 ## hardware
 ### sensor_modules
-  ![18650 Battery | width=10][18650]
-  * ESP8266 TTGO  G620
+  ![18650 Battery ][18650]
   ![esp32_w_bat Board][esp32_w_bat]
   ![esp32_w_sd Board][esp32_w_sd]
   ![max9814 amplified microphone][max9814]
-  * Accelerometer MMA7361 
   ![mma7361 accelerometer][mma7361]
   ![mma7361_accel accelerometer][mma7361_accel]
 
@@ -124,7 +122,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## use_cases
 ### The Digital_Multi_Tool use cases are listed below:
-![spirit_level]
+[![spirit_level]](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7) 
 
 ## place_sense
 ### Classic Living System Monitor-- to observe Climate and Place Data
@@ -133,9 +131,9 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## controller
 ### Sound and Video Controller
-[![sound_wand](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)]
+[![sound_wand]](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)]
 
-[![Some Sounds](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
+[![Some Sounds]](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
 
 
 ## the_server
@@ -155,13 +153,8 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
   Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool
 
-# Digital Multi-Tool embedded software
-  Please see this chart on how the software works, and how the user can navigate through configured programs.
-  https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e
-
 ## See all the videos here:
 [![all_the_things]] (https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
-
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 

@@ -82,6 +82,8 @@ T8. Long-lasting interactions with IoT objects exploiting emotional durable desi
 
  [![A Fly By]](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
 
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/tree/master/Enclosure
+
 In anticipation that this object will change overtime, additional layers of acrylic can be added or removed to make the necessary room for any expansions made for the ESP2866. The Digital_Things physical description is a clear laser cut acrylic and wood panels, sandwiched on top of each other. The sensor modules are clearly visible inside the void of the enclosure. A small amount of color wires connect the ESP32 to the sensor modules. 
 
 Sensor modules can be added to the enclosure by first mounting them on slides and stacking them using standoffs. All the sensor modules share one common ground and voltage from a small PCB with 2 rows of 8 female headers.
@@ -152,7 +154,7 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool
 
 ## See all the videos here:
-[![all_the_things]] (https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
+[![all_the_things]](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
 
 ## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
 

@@ -65,4 +65,18 @@ Reference-style:
 [mma7361_accel]: ../Images/sensor_modules/mma7361_accel.png
 
 
-
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/cutting_bolts.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/dupont_wire_crimp.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/hot_glue_sensor_modules.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/image1.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/iot_network_for_artists.jpg
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/outside_light_sensor.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/process_and_state_diagram.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/submission.png
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/table_top.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_band.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
+https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG

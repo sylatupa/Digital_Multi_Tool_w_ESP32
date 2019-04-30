@@ -94,7 +94,6 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   ![state_machine]
   Using a state machine, implemented with a series of if statements that allow the user to select programs.
   
-
 ## hardware
 ### sensor_modules
   ![18650 Battery ][18650]
@@ -103,23 +102,6 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
   ![max9814 amplified microphone][max9814]
   ![mma7361 accelerometer][mma7361]
   ![mma7361_accel accelerometer][mma7361_accel]
-
-### wifi
-  I had a left over wifi router that I used. I can unplug the Wifi router and take it with me where ever I'm using my Digital Things. This is connected to the INTRA-net--only a local connection is used for intra-networktivity.  This system has completed features that include:
-
-### ESP32
-  Creates its own wifi hotspot for advanced configuration and re-connecting to wifi.
-  Limited inputs and outputs:
-  Touch sensitive 
-  Haptic Feedback
-  Lithium Ion battery with on board battery charging, or it can run off usb.
-  Bluetooth and Wifi
-1. Why use ESP32: Affordable and has enough systems on a chip to adequately run the programs put onto it. Battery, etc.
-  2. This mobile device does have some functionality of a cell phone
-  1. —but the cost is dramatically less
-  2. the potential for the battery to last much longer than a cell phone
-  3. These reasons, when combined, then allow for applications to be used outdoors in places where it could be damaged or stolen.
-
 
 ## use_cases
 ### The Digital_Multi_Tool use cases are listed below
@@ -151,8 +133,6 @@ https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5Ju
   --
   With this application I'm demonstrating a device that has an application that works both online and offline, 'stand-alone'.
   LEDs around the edge
-
-  Listening with out using your ears , Haptics skin music , Lauren Hayes. Communicating with other improvisors. Notification tool
 
 ## See all the videos here:
 ![all_the_things]

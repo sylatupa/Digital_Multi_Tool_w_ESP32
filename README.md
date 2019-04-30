@@ -163,13 +163,8 @@ https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5Ju
 [submission]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/submission.png
 
 [the_band]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_band.JPG
-[the_layers]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers.JPG
-[the_layers2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/the_layers2.JPG
-[wire_sensor_modules]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules.JPG
-[wire_sensor_modules_2]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/wire_sensor_modules_2.JPG
-
-VIDEO LINK IMAGES
+[sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
 [all_the_things]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/all_the_things.png
 [place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png
 [spirit_level]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
-[sound_wand]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/sound_wand.png
+

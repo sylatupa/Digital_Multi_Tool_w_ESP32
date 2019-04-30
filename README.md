@@ -123,12 +123,12 @@ Sensor modules can be added to the enclosure by first mounting them on slides an
 
 ## use_cases
 ### The Digital_Multi_Tool use cases are listed below:
-[spirit_level]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/spirit_level.png
+![spirit_level]
 
 ## place_sense
 ### Classic Living System Monitor-- to observe Climate and Place Data
   * Sensors include: Temp, Humidity, Noise (Sound Amplitude), Motion, Light
-[![place_sense]: https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
+[![place_sense]:(https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Images/place_sense.png)](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
 
 ## controller
 ### Sound and Video Controller

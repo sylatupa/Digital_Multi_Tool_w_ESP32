@@ -309,6 +309,10 @@ QUESTION:: In what way do I discuss some of the design decisions, if they were m
 (Read this as: Not only do I like the feature, but I also think other people like these aesthetics OR novelty, too.)
 
 [All the videos](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf)
+[Place Sense](https://www.youtube.com/watch?v=dvjA3GYnUuc&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=4)
+[A Fly By](https://www.youtube.com/watch?v=zzlslcG2fdA&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=1)
+[Some Sounds](https://www.youtube.com/watch?v=B9ACMyeBL88&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=3)
+[Spirit Level](https://www.youtube.com/watch?v=ZxfC2JU0sd4&list=PLcqKf5XU9uVOfuwFNbiraGHOt9Q5JuXdf&index=7)
 
 [state_machine]: ./Images/process_and_state_diagram.png
 [wood_enclosure]: ./Images/enclosure/wood_enclosure.jpg

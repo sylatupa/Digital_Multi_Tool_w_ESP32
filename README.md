@@ -12,10 +12,47 @@ and speed up the time it take to get prototypes
 from off of the work bench and into the world. 
 ```
 
-### Here are the milestones from the project:
+## Table of Contents
+1. [Introduction](#introduction)
+
+ Milestones from the project
+## Parallel projects that work with the Digital_Thing:
+# Reasoning and Motivations
+### Micropython
+# Why use the ESP32?
+## Reasonings and Motivations
+# Enclosure Design and Construction
+# The Framework 
+# The Digital_Multi_Tool use cases are listed below:
+## Classic Living System Monitor-- to observe Climate and Place Data
+# Sound and Video Controller
+# Something Fun with Media Creation (Sound and/or Video)
+# The Server for Edge Computing.
+# Physical Description:
+# Digital Multi-Tool embedded software
+### Software
+# Hardware
+## Wifi
+# ESP32
+# Raspberry Pi
+# Utility
+## Demonstrate some simple use cases that are 'Tool' like:
+## Getting Started
+### Prerequisites
+##Networking:
+### Installing
+#### This software can be run in a variety of ways. 
+##### On Ubuntu:
+##### Ubuntu-Port of Micro-Python:
+##### On The ESP32:
+### Deployment
+
+
+## Milestones from the project:
 - [x] Using and authenticating to Network protocols: WiFi and MQTT
 - [x] A publisher and subscriber paradigm that allows multiple programs to run on the board, where some programs publish data and others subscribe to the data in a seamless way (such as an accelerometer creates xyz data and neopixels use that data for some light affect), found here [pub_sub_local.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/pub_sub_local.py)
 - [x] A state-machine, written with a series of if-else statements, that allow for navigation to and the activation of programs--and code for an OLED display to show data and the menu during navigation. found here [Menu.py](https://github.com/sylatupa/Digital_Multi_Tool_w_ESP32/blob/master/Digital_Thing/Digital_Thing/Menu.py) and diagramed here [State Machine and Process Diagram](https://raw.githubusercontent.com/sylatupa/Digital_Multi_Tool_w_ESP32/master/Images/process_and_state_diagram.png) or the [Lucid Chart version ](https://www.lucidchart.com/invitations/accept/83a8f492-7b02-4a9a-af31-d71b3470497e). And the GUI with OLED found here, in the [gui.py](./Digital_Thing/gui.py)
+- [x] Touch interaction with the Menu, with the touch points of contact being the 4 corner bolts for the enclosure, found here in the [toucpin_getch.py](./Digital_Thing/touchpin_getch.py) 
 - [x] A configuration file that helps manage the name of the board, wifi ssid and password, IP address of the MQTT server, and a list of apps to be used found here in the [this_thing.json](./Digital_Thing/this_thing.json).
 - [x] A configuration file that lists what the program will be publishing or subscribing to , found here in the [app_config.json](./Digital_Thing/app_config.json)
 - [ ] Ability to deactivate currently running programs
@@ -32,7 +69,7 @@ Its a Digital Tool for people living in an Analog World.
 ```
 :robot:
 
-### Parallel projects that work with the Digital_Thing:
+## Parallel projects that work with the Digital_Thing:
 
 The Digital_Thing is built in the context of a Digital Culture, Arts Media and Engineering, Master of Arts program and some of the following project examples are with interactive art and media. 
 
@@ -233,6 +270,12 @@ Python3.6:
 ## Contributing
 
 #(comment) Please read [CONTRIBUTING.md](https://gist.github.com/sylatupa/4d0b51c97d2bd8cf210a60c0e7a7d175) for details on our code of conduct, and the process for submitting pull requests to us.
+
+
+
+
+## Introduction
+
 
 ## License
 

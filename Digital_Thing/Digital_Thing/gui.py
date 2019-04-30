@@ -1,4 +1,6 @@
 global xsize, ysize
+
+#code attribution goes to PrashantMohta https://github.com/PrashantMohta/mlcd/blob/master/mlcd_example.py
 try:
     import pygame
 except:
@@ -97,7 +99,6 @@ def drawOled(fullPrint):
         oled.show()
 
 
-#code attribution goes to PrashantMohta https://github.com/PrashantMohta/mlcd/blob/master/mlcd_example.py
 def init(chars,lines):
    
     global screen
